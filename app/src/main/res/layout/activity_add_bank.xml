@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <androidx.constraintlayout.widget.ConstraintLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/bg_common"
+      android:id="@+id/mainLayout"
+      tools:context=".activity.AddBankActivity"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:orientation="horizontal"
+          android:padding="@dimen/_10sdp"
+          >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic__back_arrow"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Add Bank"
+            android:textColor="@color/colorGray"
+            />
+      </LinearLayout>
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+          <EditText
+              android:id="@+id/etName"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Name"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="text"
+              android:textColor="@color/colorGray"
+              />
+          <EditText
+              android:id="@+id/etEmail"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Email Address"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="textEmailAddress"
+              android:textColor="@color/colorGray"
+              />
+
+          <EditText
+              android:id="@+id/etPhone"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Mobile Number"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="number"
+              android:maxLength="10"
+              android:textColor="@color/colorGray"
+              />
+
+          <EditText
+              android:id="@+id/etAccountNumber"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Bank AccountNumber"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="number"
+              android:textColor="@color/colorGray"
+              />
+
+          <EditText
+              android:id="@+id/etifsc"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter IFSC Code"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="text"
+              android:textColor="@color/colorGray"
+              />
+          <EditText
+              android:id="@+id/etAddress"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Address"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="text"
+              android:textColor="@color/colorGray"
+              />
+          <EditText
+              android:id="@+id/etCity"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter City Name"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="text"
+              android:textColor="@color/colorGray"
+              />
+          <EditText
+              android:id="@+id/etState"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter State"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="text"
+              android:textColor="@color/colorGray"
+              />
+          <EditText
+              android:id="@+id/etPinode"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter PinCode"
+              android:singleLine="true"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_10sdp"
+              android:inputType="number"
+              android:textColor="@color/colorGray"
+              />
+
+          <Button
+              android:id="@+id/btnSubmit"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/_20sdp"
+              android:layout_marginLeft="@dimen/_20sdp"
+              android:layout_marginRight="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_30sdp"
+              android:background="@drawable/bg_btn"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:text="Submit"
+              android:textColor="@color/colorWhite"
+              />
+        </LinearLayout>
+
+
+      </ScrollView>
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

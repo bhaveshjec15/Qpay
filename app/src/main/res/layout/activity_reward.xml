@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RewardActivity"
+    android:background="@drawable/bg_common"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        >
+
+      <ImageView
+          android:layout_width="@dimen/_15sdp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:id="@+id/iv_back"
+          android:src="@drawable/ic__back_arrow"
+          />
+      <com.google.android.material.textview.MaterialTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:text="Reward"
+          android:textColor="@color/colorGray"
+          />
+    </LinearLayout>
+
+
+
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

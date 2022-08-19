@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <androidx.constraintlayout.widget.ConstraintLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/mainLayout"
+      android:background="@drawable/bg_common"
+      tools:context=".activity.OTPActivity"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:orientation="horizontal"
+          android:padding="@dimen/_10sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/iv_back"
+            android:src="@drawable/ic__back_arrow"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="OTP"
+            android:textColor="@color/colorGray"
+            />
+      </LinearLayout>
+      <ImageView
+          android:id="@+id/qpay_1"
+          android:layout_width="@dimen/_70sdp"
+          android:layout_height="@dimen/_55sdp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_20sdp"
+          android:background="@drawable/ic_app_icon"
+          />
+
+      <androidx.appcompat.widget.AppCompatImageView
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_15sdp"
+          android:layout_marginLeft="@dimen/_20sdp"
+          android:layout_marginRight="@dimen/_20sdp"
+          android:layout_marginTop="@dimen/_10sdp"
+          android:src="@drawable/ic_otp_title"
+          />
+      <TextView
+          android:id="@+id/tvPhoneNo"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:padding="@dimen/_5sdp"
+          />
+     <com.kevinschildhorn.otpview.OTPView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:inputType="number"
+         android:id="@+id/pinview"
+         app:otp_showCursor="true"
+         app:otp_backgroundImage="@drawable/bg_otp"
+         app:otp_cursorColor="@color/colorGray"
+         app:otp_marginBetween="@dimen/_5sdp"
+         android:layout_gravity="center"
+         app:otp_itemWidth="@dimen/_40sdp"
+         app:otp_itemHeight="@dimen/_40sdp"
+         app:otp_itemCount="6"/>
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:layout_marginLeft="@dimen/_15sdp"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:layout_marginRight="@dimen/_15sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="03:00"
+            android:gravity="center_vertical"
+            android:id="@+id/tvRemaningSeconds"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Resend Otp"
+            android:textColor="@color/colorBtn"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tvResendOtp"/>
+
+
+
+      </RelativeLayout>
+
+      <!--<com.goodiebag.pinview.Pinview
+          android:id="@+id/pinview"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_20sdp"
+          app:inputType="number"
+          app:password="false"
+          app:pinBackground="@drawable/bg_otp"
+          app:pinHeight="@dimen/_45sdp"
+          app:pinLength="4"
+          app:pinWidth="@dimen/_45sdp"
+          />-->
+      <ProgressBar
+          android:id="@+id/progress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:visibility="gone"
+          />
+    </LinearLayout>
+
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

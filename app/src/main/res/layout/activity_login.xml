@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+    <variable
+        name="viewModel"
+        type="com.qpay.android.viewModel.LoginViewModel"
+        />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/mainLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/bg_common"
+      >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity"
+        >
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:paddingEnd="@dimen/_20sdp"
+          android:paddingStart="@dimen/_20sdp"
+          >
+
+        <ImageView
+            android:id="@+id/qpay_1"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/ic_app_icon"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ic_headline_login"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/enter_your_mobile_no"
+            android:textColor="@color/colorEditTxtHeading"
+            android:textSize="@dimen/_12sdp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_edittxt"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:layout_weight="0.4"
+              android:background="@drawable/bg_country_code"
+              android:gravity="center"
+              android:padding="@dimen/_5sdp"
+              android:text="+91"
+              android:textColor="@color/colorEditTxtHeading"
+              />
+
+          <EditText
+              android:id="@+id/edtPhoneNo"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1.6"
+              android:afterTextChanged="@{viewModel::afterTextChanged}"
+              android:backgroundTint="#EEF1FB"
+              android:hint="9876543219"
+              android:inputType="phone"
+              android:maxLength="10"
+              android:textColor="@color/colorGray"
+              />
+
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <Button
+          android:id="@+id/btnSubmit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="@dimen/_20sdp"
+          android:layout_marginLeft="@dimen/_20sdp"
+          android:layout_marginRight="@dimen/_20sdp"
+          android:background="@drawable/bg_btn"
+          android:foreground="?android:attr/selectableItemBackground"
+          android:text="@string/proceed"
+          android:textColor="@color/colorWhite"
+          />
+
+      <ProgressBar
+          android:id="@+id/progress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:visibility="gone"
+          />
+    </RelativeLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

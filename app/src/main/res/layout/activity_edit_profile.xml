@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    android:background="@drawable/bg_common"
+    tools:context=".activity.EditProfileActivity"
+    >
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        >
+
+      <ImageView
+          android:layout_width="@dimen/_15sdp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:id="@+id/iv_back"
+          android:src="@drawable/ic__back_arrow"
+          />
+      <com.google.android.material.textview.MaterialTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:text="Edit Profile"
+          android:textColor="@color/colorGray"
+          />
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_gravity="center"
+        android:id="@+id/iv_profile"
+        android:src="@drawable/ic_profile"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/colorBlack"/>
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EEF1FB"
+        android:hint="Enter First Name"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:inputType="text"
+        android:textColor="@color/colorGray"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/colorBlack"/>
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EEF1FB"
+        android:hint="Enter Last Name"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:inputType="text"
+        android:textColor="@color/colorGray"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Adress"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/colorBlack"/>
+    <EditText
+        android:id="@+id/etEmailName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EEF1FB"
+        android:hint="Enter Email Address"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorGray"
+        />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Address"
+      android:layout_marginLeft="@dimen/_10sdp"
+      android:layout_marginRight="@dimen/_10sdp"
+      android:layout_marginTop="@dimen/_10sdp"
+      android:textColor="@color/colorBlack"/>
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EEF1FB"
+        android:hint="Enter Address"
+        android:minHeight="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:inputType="text"
+        android:layout_gravity="bottom"
+        android:gravity="top"
+        android:textColor="@color/colorGray"
+        />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/bg_btn"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Update"
+        android:textColor="@color/colorWhite"
+        />
+
+  </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+  </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

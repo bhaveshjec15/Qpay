@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/nav_history"
+        android:title="History"
+        android:enabled="true"
+        android:icon="@drawable/ic_history"/>
+    <item
+        android:id="@+id/nav_rewards"
+        android:title="Rewards"
+        android:enabled="true"
+        android:icon="@drawable/ic_rewards"/>
+    <item
         android:id="@+id/nav_home"
         android:title="Home"
         android:enabled="true"
         android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/nav_search"
-        android:title="Search"
+        android:id="@+id/nav_bank"
+        android:title="Bank"
         android:enabled="true"
-        android:icon="@drawable/ic_search"/>
+        android:icon="@drawable/ic_bank"/>
     <item
-        android:id="@+id/nav_radio"
-        android:title="Radio"
+        android:id="@+id/nav_settings"
+        android:title="Settings"
         android:enabled="true"
-        android:icon="@drawable/ic_radio"/>
-    <item
-        android:id="@+id/nav_my_music"
-        android:title="My Music"
-        android:enabled="true"
-        android:icon="@drawable/ic_music"/>
-    <item
-        android:id="@+id/nav_library"
-        android:title="Library"
-        android:enabled="true"
-        android:icon="@drawable/ic_library"/>
+        android:icon="@drawable/ic_settings"/>
 </menu>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/MyProject/BaseCode/BottomBar/AndroidBottomNavigationViewExp/app/src/main/res/drawable/icon_color.xml" value="0.13" />
+        <entry key="..\:/MyProject/BaseCode/BottomBar/AndroidBottomNavigationViewExp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/BaseCode/BottomBar/AndroidBottomNavigationViewExp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable-v24/bg_editText.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_btn.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_country_code.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_default_amount.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_editTxt.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_edittxt.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_otp.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_profile_tag.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_setting.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_upper_curve.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/border_spinner.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic__back_arrow.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_app_icon.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_change_pin.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_home.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/icon_color.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_add_bank.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_add_money.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_all_plans.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_bank_amount_transfer.xml" value="0.25416666666666665" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_bank_transfer.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_contact_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_edit_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_electricity_bill_pay.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_electricity_input.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_electricty_biller_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag_bill_pay.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_kyc.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_my_account.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_otpactivity.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_pin_setup.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_bill_pay.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_input.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_postpaid_biller_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_qrcode_scan.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_recharge_pay.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_refer.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_referal_code.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_reward.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_send_amount.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_send_to_mobile.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_static_page.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_status.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/cameradialog.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_bank.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_reqard.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_search.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/fragment_setting.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/image_slider_item_new.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_all_pack.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_combo_pack.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_contact.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_fastag_biller.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_full_talk_time_pack.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_international.xml" value="0.12360688956433637" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_internet.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_special.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/layout_form_input_new.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <LinearLayout
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context=".activity.StatusActivity"
+      android:id="@+id/mainLayout"
+      android:background="@color/colorBtn"
+      >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            >
+
+          <ImageView
+              android:layout_width="@dimen/_15sdp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:id="@+id/iv_back"
+              android:visibility="gone"
+              android:src="@drawable/ic__back_arrow"
+              />
+          <com.google.android.material.textview.MaterialTextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:text="Status"
+              android:textColor="@color/colorWhite"
+              />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="@dimen/_100sdp">
+
+          <ImageView
+              android:layout_width="@dimen/_50sdp"
+              android:layout_height="@dimen/_50sdp"
+              android:src="@drawable/ic_right_tick"
+              android:layout_gravity="center"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/tvMessage"
+            android:textStyle="bold"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/colorWhite"
+            android:text="Earn money every time a refered friends makes money transfer on QPay"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg_upper_curve">
+
+
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/_150sdp"
+              android:layout_margin="@dimen/_10sdp"
+              android:src="@drawable/frame"
+              />
+
+          <Button
+              android:id="@+id/btnGoToHome"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/_20sdp"
+              android:layout_marginLeft="@dimen/_20sdp"
+              android:layout_marginRight="@dimen/_20sdp"
+              android:layout_marginTop="@dimen/_30sdp"
+              android:background="@drawable/bg_btn"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:text="Go To Home"
+              android:textColor="@color/colorWhite"
+              />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+  </LinearLayout>
+</layout>

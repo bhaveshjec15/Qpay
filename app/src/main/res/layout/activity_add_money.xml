@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/mainLayout"
+      android:background="@drawable/bg_common"
+      tools:context=".activity.AddMoneyActivity"
+      >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            >
+
+          <ImageView
+              android:id="@+id/iv_back"
+              android:layout_width="@dimen/_15sdp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:src="@drawable/ic__back_arrow"
+              />
+          <com.google.android.material.textview.MaterialTextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:text="Add Money"
+              android:textColor="@color/colorGray"
+              />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/frame"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:weightSum="2"
+                >
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="0.3"
+                  >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_q"
+                    />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center_vertical"
+                  android:layout_weight="1"
+                  android:gravity="center_vertical"
+                  android:orientation="vertical"
+                  >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="Qpay Wallet"
+                    android:textColor="@color/colorBlack"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="Available Balance"
+                    />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="0.7"
+                  android:gravity="center"
+                  android:orientation="horizontal"
+                  >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="\u20B9"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:text="20000"
+                    android:id="@+id/currentBalance"
+                    android:textColor="@color/colorBtn"
+                    />
+
+              </LinearLayout>
+
+
+            </LinearLayout>
+
+
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_edittxt"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+          <EditText
+              android:id="@+id/etAmount"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="2"
+              android:backgroundTint="#EEF1FB"
+              android:hint="Enter Amount"
+              android:inputType="phone"
+              android:maxLength="5"
+              android:paddingStart="@dimen/_10sdp"
+              android:textColor="@color/colorGray"
+              />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+          <TextView
+              android:id="@+id/tvOne"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:layout_margin="@dimen/_5sdp"
+              android:layout_weight="1"
+              android:background="@drawable/bg_default_amount"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:gravity="center"
+              android:text="+100"
+              android:textColor="@color/colorGray"
+              />
+          <TextView
+              android:id="@+id/tvTwo"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:layout_margin="@dimen/_5sdp"
+              android:layout_weight="1"
+              android:background="@drawable/bg_default_amount"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:gravity="center"
+              android:text="+500"
+              android:textColor="@color/colorGray"
+              />
+          <TextView
+              android:id="@+id/tvThree"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:layout_margin="@dimen/_5sdp"
+              android:layout_weight="1"
+              android:background="@drawable/bg_default_amount"
+              android:foreground="?android:attr/selectableItemBackground"
+              android:gravity="center"
+              android:text="+1000"
+              android:textColor="@color/colorGray"
+              />
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/bg_btn"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/proceed"
+            android:textColor="@color/colorWhite"
+            />
+      </LinearLayout>
+
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

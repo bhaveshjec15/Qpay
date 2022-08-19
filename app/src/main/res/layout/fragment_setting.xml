@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/bg_common"
+      tools:context=".fragment.SettingFragment"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_setting"
+        android:orientation="vertical"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_update_profile"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="Personal Info"
+            />
+
+      </LinearLayout>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/colorDividerDark"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_add_money"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="Enable app pin"
+            />
+
+      </LinearLayout>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/colorDividerDark"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_change_pin"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="Change QPin"
+            />
+
+      </LinearLayout>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/colorDividerDark"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:id="@+id/layoutAbout"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_change_pin"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="About Us"
+            />
+
+      </LinearLayout>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/colorDividerDark"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:id="@+id/layoutPrivacyPolicy"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_change_pin"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="Privacy Policy"
+            />
+
+      </LinearLayout>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_1sdp"
+          android:background="@color/colorDividerDark"
+          />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:layout_gravity="center_vertical"
+          android:gravity="center_vertical"
+          android:id="@+id/layoutTerms"
+          android:orientation="horizontal"
+          android:padding="@dimen/_15sdp"
+          >
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_change_pin"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="Terms &amp; Conditions"
+            />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </FrameLayout>
+
+</layout>

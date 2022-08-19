@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BankAmountTransferActivity"
+    android:background="@drawable/bg_common"
+    android:id="@+id/mainLayout"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        >
+
+      <ImageView
+          android:layout_width="@dimen/_15sdp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:id="@+id/iv_back"
+          android:src="@drawable/ic__back_arrow"
+          />
+      <com.google.android.material.textview.MaterialTextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:text="Amount Transfer To Bank"
+          android:textColor="@color/colorGray"
+          />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EEF1FB"
+        android:hint="Enter Amount"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:inputType="number"
+        android:textColor="@color/colorGray"
+        />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/bg_btn"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Submit"
+        android:textColor="@color/colorWhite"
+        />
+  </LinearLayout>
+  <ProgressBar
+      android:id="@+id/progress"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:visibility="gone"
+      />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
