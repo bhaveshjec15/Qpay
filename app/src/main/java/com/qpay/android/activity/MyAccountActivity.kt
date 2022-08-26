@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidmads.library.qrgenearator.QRGContents.Type
 import androidmads.library.qrgenearator.QRGEncoder
@@ -32,6 +33,7 @@ class MyAccountActivity : AppCompatActivity() {
   val userBalance: MutableLiveData<Int?> = MutableLiveData(0)
   val userImage: MutableLiveData<String?> = MutableLiveData("")
   val userPhone: MutableLiveData<String?> = MutableLiveData("")
+  val kycStatus: MutableLiveData<String?> = MutableLiveData("")
 
   var qrgEncoder: QRGEncoder? = null
 
@@ -51,13 +53,27 @@ class MyAccountActivity : AppCompatActivity() {
     callApiGetProfile()
     callApiGetBalance()
 
+    kycStatus.observe(this, Observer {
+      if (it.toString().isNotEmpty()) {
+        if (kycStatus.value.toString().equals("ACCEPTED")) {
+          binding.ivKycStatus.visibility = View.VISIBLE
+        } else {
+          binding.ivKycStatus.visibility = View.GONE
+        }
+      }
+    })
     userBalance.observe(this, Observer {
       binding.currentBalance.text = it.toString()
     })
 
     binding.layoutKyc.setOnClickListener {
-      val intent = Intent(this, kycActivity::class.java)
-      startActivity(intent)
+      if (kycStatus.value.equals("ACCEPTED")) {
+
+      } else {
+        val intent = Intent(this, kycActivity::class.java)
+        startActivity(intent)
+      }
+
     }
     binding.layoutLogout.setOnClickListener {
       logout()
@@ -82,12 +98,12 @@ class MyAccountActivity : AppCompatActivity() {
       .positiveButton(
         "Yes"
       ) {
-        saveBooleanShrd(baseContext,CommonUtils.isLogin,false)
+        saveBooleanShrd(baseContext, CommonUtils.isLogin, false)
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
       }
-      .negativeButton("No",DroidDialog.onNegativeListener {
+      .negativeButton("No", DroidDialog.onNegativeListener {
         it.cancel()
       })
       /*.neutralButton(
@@ -132,12 +148,13 @@ class MyAccountActivity : AppCompatActivity() {
         if (statusCode == 200) {
           var dataObject = jsonObject.optJSONObject("data")
           binding.tvName.setText(dataObject.optString("first_name"))
-          binding.tvPhone.setText("+91"+dataObject.optString("mobile_number"))
+          kycStatus.value = dataObject.optString("kyc_status")
+          binding.tvPhone.setText("+91" + dataObject.optString("mobile_number"))
           userPhone.value = dataObject.optString("mobile_number")
           var image = dataObject.optString("image_url")
-          if(image.isNullOrEmpty()){
+          if (image.isNullOrEmpty()) {
             binding.ivProfile.setImageResource(R.drawable.ic_profile)
-          }else{
+          } else {
             Picasso.get().load(image).into(binding.ivProfile)
           }
 

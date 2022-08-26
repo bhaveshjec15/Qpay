@@ -5,49 +5,45 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import com.qpay.android.R
-import com.qpay.android.databinding.ActivityBankTransferBinding
-import com.qpay.android.databinding.ActivityRewardBinding
+import com.qpay.android.databinding.ActivityPinBinding
+import com.qpay.android.databinding.ActivityPinSetupBinding
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
-import com.qpay.android.utils.showSnackBar
+import com.qpay.android.utils.saveStringShrd
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RewardActivity : AppCompatActivity() {
-  private lateinit var binding: ActivityRewardBinding
-  var totalPoints: String? = ""
-  var totalAmount: String = ""
+class PinActivity : AppCompatActivity() {
+  private lateinit var binding: ActivityPinBinding
+  val pinData: MutableLiveData<String?> = MutableLiveData("")
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    binding = DataBindingUtil.setContentView(this, R.layout.activity_reward)
-    binding.ivBack.setOnClickListener { finish() }
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_pin)
   }
 
   override fun onResume() {
     super.onResume()
 
-    callApiGetPoints()
+    callApiGetPin()
 
-    binding.btnRedeem.setOnClickListener {
-      val intent = Intent(this, RedeemActivity::class.java)
-      intent.putExtra("totalPoints",totalPoints)
-      startActivity(intent)
-    }
-
-    binding.layoutRefer.setOnClickListener {
-      val intent = Intent(this, ReferActivity::class.java)
-      startActivity(intent)
+    binding.createPinView.setOnFinishListener {
+     if(it.toString().isNotEmpty()){
+       val intent = Intent(this, MainActivity::class.java)
+       startActivity(intent)
+       finish()
+     }
     }
   }
 
-  private fun callApiGetPoints() {
-    val apiInterface = ApiInterface.create().getReferalPoints(
+  private fun callApiGetPin() {
+    val apiInterface = ApiInterface.create().getPin(
       getStringShrd(
         baseContext,
         CommonUtils.accessToken
@@ -63,21 +59,16 @@ class RewardActivity : AppCompatActivity() {
         } else {
           response1 = response.body()?.string()
         }
-        Log.e("response", "getPoints: " + response1.toString())
+        Log.e("response", "getPin: " + response1.toString())
         var jsonObject = JSONObject(response1)
         var statusCode = jsonObject.optInt("status")
         var message = jsonObject.optString("message")
         if (statusCode == 200) {
           var dataObject = jsonObject.optJSONObject("data")
-          var totalPoints1 = dataObject.optJSONObject("totalRwdPts").toString()
-          var totalAmount1 = dataObject.optJSONObject("balanceRwdPts").toString()
-          totalPoints = totalPoints1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
-          totalAmount = totalAmount1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
-          binding.tvPoints.text = totalPoints + " Points"
-
-          Log.e("tt", totalPoints!!)
+          var pin = dataObject.optString("pin")
+          pinData.value = pin
         } else {
-          showSnackBar(baseContext, binding.mainLayout, message)
+          //showSnackBar(pinSetUpActivity, binding.mainLayout, message)
         }
       }
 

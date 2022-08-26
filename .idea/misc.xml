@@ -15,6 +15,7 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_edittxt.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_otp.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_profile_tag.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_redeem.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_setting.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_upper_curve.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/border_spinner.xml" value="0.13" />
@@ -23,6 +24,8 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_change_pin.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_home.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_right_arrow_new.xml" value="0.1305" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_tick_svgrepo_com.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/icon_color.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_add_bank.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_add_money.xml" value="0.22826086956521738" />
@@ -42,12 +45,14 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_my_account.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_otpactivity.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_pin.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_pin_setup.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_bill_pay.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_input.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_postpaid_biller_list.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_qrcode_scan.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_recharge_pay.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_redeem.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_refer.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_referal_code.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_reward.xml" value="0.22826086956521738" />

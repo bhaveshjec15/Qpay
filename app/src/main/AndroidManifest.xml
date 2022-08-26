@@ -37,6 +37,12 @@
       android:usesCleartextTraffic="true">
     <activity
         android:exported="false"
+        android:name=".activity.PinActivity" />
+    <activity
+        android:exported="false"
+        android:name=".activity.RedeemActivity" />
+    <activity
+        android:exported="false"
         android:name=".activity.BankAmountTransferActivity" />
     <activity
         android:exported="false"

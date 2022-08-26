@@ -46,9 +46,12 @@ class SplashActivity : AppCompatActivity() {
 
     if (getBooleanShrd( "isLogin") == true) {
       Handler().postDelayed({
-        val intent = Intent(this, MainActivity::class.java)
+     val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+       /* val intent = Intent(this, PinActivity::class.java)
+        startActivity(intent)
+        finish()*/
       }, 2000)
     } else {
       Handler().postDelayed({

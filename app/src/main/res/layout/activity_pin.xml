@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/mainLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/bg_common"
+      tools:context=".activity.PinActivity"
+      >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            >
+
+          <ImageView
+              android:id="@+id/iv_back"
+              android:layout_width="@dimen/_15sdp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:visibility="gone"
+              android:src="@drawable/ic__back_arrow"
+              />
+          <com.google.android.material.textview.MaterialTextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:text="Verify Pin"
+              android:textColor="@color/colorGray"
+              />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/qpay_1"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/ic_app_icon"
+            />
+
+
+        <TextView
+            android:id="@+id/tvPhoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Verify QPin"
+            android:textColor="@color/colorGray"
+            />
+        <com.kevinschildhorn.otpview.OTPView
+            android:id="@+id/createPinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="number"
+            app:otp_backgroundImage="@drawable/bg_otp"
+            app:otp_cursorColor="@color/colorGray"
+            app:otp_itemCount="6"
+            app:otp_itemHeight="@dimen/_35sdp"
+            app:otp_itemWidth="@dimen/_35sdp"
+            app:otp_marginBetween="@dimen/_10sdp"
+            app:otp_showCursor="true"
+            />
+
+        <!--<com.goodiebag.pinview.Pinview
+            android:id="@+id/pinview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:inputType="number"
+            app:password="false"
+            app:pinBackground="@drawable/bg_otp"
+            app:pinHeight="@dimen/_45sdp"
+            app:pinLength="4"
+            app:pinWidth="@dimen/_45sdp"
+            />-->
+      </LinearLayout>
+      <ProgressBar
+          android:id="@+id/progress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:visibility="gone"
+          />
+    </RelativeLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

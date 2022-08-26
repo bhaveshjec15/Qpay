@@ -16,6 +16,7 @@ import com.qpay.android.requestModel.PinSetUpRequest
 import com.qpay.android.requestModel.PostPaidBillPay
 import com.qpay.android.requestModel.PostPaidFetchBillRequest
 import com.qpay.android.requestModel.PrepaidGetCompanyRequest
+import com.qpay.android.requestModel.RedeemRequest
 import com.qpay.android.requestModel.ReferCodeRequest
 import com.qpay.android.requestModel.SendAmountRequest
 import com.qpay.android.requestModel.TokenRequest
@@ -42,6 +43,12 @@ interface ApiInterface
   @GET("customer/profile")
   fun getProfile(@Header ("x-access-token") header: String) : Call<ResponseBody>
 
+  @GET("customer/getPin")
+  fun getPin(@Header ("x-access-token") header: String) : Call<ResponseBody>
+
+  @GET("customer/referralPoint")
+  fun getReferalPoints(@Header ("x-access-token") header: String) : Call<ResponseBody>
+
   @GET("customer/bankAccount")
   fun getSavedBank(@Header ("x-access-token") header: String) : Call<ResponseBody>
 
@@ -62,6 +69,9 @@ interface ApiInterface
 
   @POST("auth/customer-login")
   fun login(@Body param: LoginRequest) : Call<ResponseBody>
+
+  @POST("customer/referralWallet")
+  fun redeemPoint(@Header ("x-access-token") header: String,@Body param: RedeemRequest) : Call<ResponseBody>
 
   @POST("auth/resend")
   fun reSendOtp(@Body param: LoginRequest) : Call<ResponseBody>
