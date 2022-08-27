@@ -11,7 +11,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.qpay.android.R
+import com.qpay.android.R.drawable
 import com.qpay.android.R.layout
 import com.qpay.android.activity.AddMoneyActivity
 import com.qpay.android.activity.BankTransferActivity
@@ -39,7 +41,9 @@ import com.qpay.android.utils.saveStringShrd
 import com.qpay.android.utils.showSnackBar
 import com.smarteist.autoimageslider.SliderAnimations.SIMPLETRANSFORMATION
 import com.smarteist.autoimageslider.SliderView
+import com.squareup.picasso.Picasso
 import com.vdx.designertoast.DesignerToast
+import kotlinx.android.synthetic.main.activity_main.profile_image
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -51,6 +55,7 @@ class HomeFragment : Fragment() {
     var adapter: SliderNewAdapter? = null
     private var sliderDataArrayList: ArrayList<SliderData>? = null
     val kycStatus: MutableLiveData<String?> = MutableLiveData("")
+    val userName: MutableLiveData<String?> = MutableLiveData("")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,7 +75,15 @@ class HomeFragment : Fragment() {
         super.onResume()
 
         callApiGetProfile()
-
+        userName.observe(requireActivity(), Observer {
+            if (it.isNullOrEmpty()) {
+                 binding.tvUserName.text = "Hi... Same"
+               // profile_image.setImageResource(drawable.ic_profile)
+            } else {
+                binding.tvUserName.text = "Hi... $it"
+               // Picasso.get().load(it).into(profile_image)
+            }
+        })
         binding.btnTransfer.text = requireActivity().resources.getString(R.string.Rs)+ " Transfer Money"
 
         binding.btnTransfer.setOnClickListener {
@@ -292,6 +305,7 @@ class HomeFragment : Fragment() {
                     var dataObject = jsonObject.optJSONObject("data")
                    // userName.value = dataObject.optString("first_name")
                   //  userImage.value = dataObject.optString("image_url")
+                    userName.value = dataObject.optString("first_name")
                     saveStringShrd(requireActivity(),CommonUtils.userId,dataObject.optString("_id"))
                     saveStringShrd(requireActivity(),CommonUtils.mobileNumber, dataObject.optString("mobile_number"))
                     saveStringShrd(requireActivity(),CommonUtils.userName, dataObject.optString("first_name"))

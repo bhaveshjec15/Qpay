@@ -68,7 +68,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:text="Create QPin"
-            android:textColor="@color/colorGray"
+            android:textColor="@color/black"
             />
         <com.kevinschildhorn.otpview.OTPView
             android:id="@+id/createPinView"
@@ -91,7 +91,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:text="Confirm QPin"
-            android:textColor="@color/colorGray"
+            android:textColor="@color/black"
             />
         <com.kevinschildhorn.otpview.OTPView
             android:id="@+id/confirmPinView"

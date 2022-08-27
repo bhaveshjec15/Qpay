@@ -198,6 +198,9 @@ class kycActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
       0 -> {
         if (resultCode == RESULT_OK) {
           if (outputFileUriDocFront != null) {
+            selectedImagePathFront =
+              CommonUtils.getRealPathFromURI(this, outputFileUriDocFront!!)
+            imageFileDocFront = File(selectedImagePathFront)
             var ims: InputStream? = null
             try {
               ims = this.getContentResolver()
@@ -249,6 +252,10 @@ class kycActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
       2 -> {
         if (resultCode == RESULT_OK) {
           if (outputFileUriDocBack != null) {
+            selectedImagePathBack =
+              CommonUtils.getRealPathFromURI(this, outputFileUriDocBack!!)
+            imageFileDocBack = File(selectedImagePathBack)
+
             var ims: InputStream? = null
             try {
               ims = this.getContentResolver()

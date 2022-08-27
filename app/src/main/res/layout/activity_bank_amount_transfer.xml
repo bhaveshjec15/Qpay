@@ -33,7 +33,9 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_gravity="center"
-          android:gravity="center"
+          android:gravity="center_vertical"
+          android:textStyle="bold"
+          android:layout_marginLeft="@dimen/_10sdp"
           android:text="Amount Transfer To Bank"
           android:textColor="@color/colorGray"
           />

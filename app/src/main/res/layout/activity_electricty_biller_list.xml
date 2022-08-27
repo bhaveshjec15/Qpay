@@ -35,10 +35,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_weight="1.7"
             android:layout_marginRight="@dimen/_20sdp"
-            android:text="Electricty"
+            android:text="Electricity"
             android:textColor="@color/colorGray"
             />
         <ImageView
@@ -74,6 +76,24 @@
 
 
       </LinearLayout>
+      <com.smarteist.autoimageslider.SliderView
+          android:id="@+id/slider"
+          android:layout_width="match_parent"
+          android:layout_margin="@dimen/_5sdp"
+          android:layout_height="@dimen/_150sdp"
+          app:sliderAnimationDuration="600"
+          app:sliderAutoCycleDirection="back_and_forth"
+          app:sliderIndicatorAnimationDuration="600"
+          app:sliderIndicatorEnabled="true"
+          app:sliderIndicatorGravity="center_horizontal|bottom"
+          app:sliderIndicatorMargin="15dp"
+          app:sliderIndicatorOrientation="horizontal"
+          app:sliderIndicatorPadding="3dp"
+          app:sliderIndicatorRadius="2dp"
+          app:sliderIndicatorSelectedColor="#5A5A5A"
+          app:sliderIndicatorUnselectedColor="#FFF"
+          app:sliderScrollTimeInSec="1"
+          />
       <androidx.cardview.widget.CardView
           android:layout_width="match_parent"
           android:layout_height="match_parent"

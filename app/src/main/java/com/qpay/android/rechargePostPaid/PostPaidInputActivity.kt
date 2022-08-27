@@ -97,7 +97,7 @@ class PostPaidInputActivity : AppCompatActivity() {
         } else {
           response1 = response.body()?.string()
         }
-        Log.e("response", "electricityFetchDetail: " + response1.toString())
+        Log.e("response", "postpaidBill: " + response1.toString())
         var jsonObject = JSONObject(response1)
         var statusCode = jsonObject.optInt("status")
         var message = jsonObject.optString("message")

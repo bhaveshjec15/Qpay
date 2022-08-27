@@ -45,10 +45,10 @@ class PrepadContactListAdapter(val mContext: Context, private val mList: List<Co
 
     holder.name.setText(ItemsViewModel.name)
     holder.number.setText(ItemsViewModel.number)
-    if(ItemsViewModel.img !=null){
+   /* if(ItemsViewModel.img !=null){
       holder.profile.setImageBitmap(ItemsViewModel.img)
-    }
-
+    }*/
+    holder.profile.text = ItemsViewModel.name[0].toString()
     holder.layoutMain.setOnClickListener {
       val intent = Intent(mContext, AllPlansActivity::class.java)
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -73,7 +73,7 @@ class PrepadContactListAdapter(val mContext: Context, private val mList: List<Co
     val name: TextView = itemView.findViewById(R.id.name)
     val number: TextView = itemView.findViewById(R.id.number)
     val layoutMain: LinearLayout = itemView.findViewById(R.id.layoutMain)
-    val profile: ImageView = itemView.findViewById(R.id.iv_profile)
+    val profile: TextView = itemView.findViewById(R.id.iv_profile)
 
   }
 }

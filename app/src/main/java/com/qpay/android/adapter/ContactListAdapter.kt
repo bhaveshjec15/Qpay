@@ -45,9 +45,12 @@ class ContactListAdapter(val mContext: Context, private val mList: List<Contacts
 
     holder.name.setText(ItemsViewModel.name)
     holder.number.setText(ItemsViewModel.number)
-    if(ItemsViewModel.img !=null){
+   /* if(ItemsViewModel.img !=null){
       holder.profile.setImageBitmap(ItemsViewModel.img)
-    }
+    }*/
+
+    holder.profile.text = ItemsViewModel.name[0].toString()
+
 
     holder.layoutMain.setOnClickListener {
       val intent = Intent(mContext, SendAmountActivity::class.java)
@@ -75,7 +78,7 @@ class ContactListAdapter(val mContext: Context, private val mList: List<Contacts
     val name: TextView = itemView.findViewById(R.id.name)
     val number: TextView = itemView.findViewById(R.id.number)
     val layoutMain: LinearLayout = itemView.findViewById(R.id.layoutMain)
-    val profile: ImageView = itemView.findViewById(R.id.iv_profile)
+    val profile: TextView = itemView.findViewById(R.id.iv_profile)
 
   }
 }

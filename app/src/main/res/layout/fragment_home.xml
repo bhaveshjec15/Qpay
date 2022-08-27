@@ -21,6 +21,25 @@
           android:layout_height="match_parent"
           android:orientation="vertical"
           >
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutMain"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:text="name"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_below="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back!"
+            android:textStyle="bold"
+            android:textColor="@color/colorBtn"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"

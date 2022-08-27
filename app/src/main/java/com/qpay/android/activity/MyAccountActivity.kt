@@ -87,6 +87,17 @@ class MyAccountActivity : AppCompatActivity() {
     userPhone.observe(this, Observer {
       generateQRCode()
     })
+
+    binding.layoutAddMoney.setOnClickListener {
+      val intent = Intent(this, AddMoneyActivity::class.java)
+      startActivity(intent)
+    }
+
+    binding.layoutAbout.setOnClickListener {
+      val intent = Intent(this, StaticPageActivity::class.java)
+      intent.putExtra("type","about")
+      startActivity(intent)
+    }
   }
 
   private fun logout() {
@@ -157,6 +168,8 @@ class MyAccountActivity : AppCompatActivity() {
           } else {
             Picasso.get().load(image).into(binding.ivProfile)
           }
+          var number = dataObject.optString("mobile_number")
+          binding.tvInfo.text = "Anyone can scan this QR or send money to you on $number. You will receive money in your wallet."
 
         } else {
           //showSnackBar(pinSetUpActivity, binding.mainLayout, message)

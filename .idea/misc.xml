@@ -9,9 +9,11 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable-v24/bg_editText.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_btn.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_circle_contact.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_country_code.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_default_amount.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_editTxt.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_edittext_new.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_edittxt.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_otp.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_profile_tag.xml" value="0.13" />
@@ -19,6 +21,7 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_setting.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/bg_upper_curve.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/border_spinner.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/btn_green_border.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic__back_arrow.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_app_icon.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_change_pin.xml" value="0.13" />

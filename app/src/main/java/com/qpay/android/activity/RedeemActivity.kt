@@ -29,7 +29,9 @@ class RedeemActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_redeem)
     totalPoints = intent.extras?.getString("totalPoints")
-    if(totalPoints !=null){
+    if(totalPoints == null || totalPoints.equals("")){
+      binding.currentBalance.text = "0" +" Points"
+    }else{
       binding.currentBalance.text = totalPoints +" Points"
     }
   }

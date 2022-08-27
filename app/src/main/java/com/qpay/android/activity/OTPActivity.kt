@@ -27,6 +27,7 @@ import retrofit2.Response
 class OTPActivity : AppCompatActivity() {
   private lateinit var binding: ActivityOtpactivityBinding
   var phoneNo: String = ""
+  var enteredPin: String? = ""
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -45,7 +46,24 @@ class OTPActivity : AppCompatActivity() {
     }
 
     binding.pinview.setOnFinishListener {
-      goToNext(it)
+    enteredPin = it
+    }
+
+    binding.btnSubmit.setOnClickListener {
+      hideKeyboardFrom(baseContext,it)
+      if(enteredPin.isNullOrEmpty()){
+        showSnackBar(this,binding.mainLayout,"Enter valid OTP")
+      }
+      else{
+        goToNext(enteredPin!!)
+      }
+
+    }
+
+    binding.tvChangeNumber.setOnClickListener {
+      val intent = Intent(this, LoginActivity::class.java)
+      startActivity(intent)
+      finish()
     }
 
 
@@ -61,12 +79,14 @@ class OTPActivity : AppCompatActivity() {
 
     object : CountDownTimer(30000, 1000) {
       override fun onTick(millisUntilFinished: Long) {
+        binding.layoutRemaning.visibility = View.VISIBLE
+        binding.tvResendOtp.visibility = View.GONE
         binding.tvRemaningSeconds.setText("00 : " + millisUntilFinished / 1000)
         // logic to set the EditText could go here
       }
 
       override fun onFinish() {
-        binding.tvRemaningSeconds.visibility = View.INVISIBLE
+        binding.layoutRemaning.visibility = View.INVISIBLE
         binding.tvResendOtp.visibility = View.VISIBLE
 
       }
@@ -111,7 +131,6 @@ class OTPActivity : AppCompatActivity() {
         var message = jsonObject.optString("message")
         var dataObject = jsonObject.optJSONObject("data")
         if (statusCode == 200) {
-          saveBooleanShrd(otpActivity, CommonUtils.isLogin, true)
           saveStringShrd(otpActivity, CommonUtils.accessToken, dataObject.optString("api_token"))
           var pinSetup = dataObject.optBoolean("is_pin_setup")
           var useReferal = dataObject.optBoolean("is_use_referral")
@@ -124,6 +143,7 @@ class OTPActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
           }else{
+            saveBooleanShrd(otpActivity, CommonUtils.isLogin, true)
             val intent = Intent(otpActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -155,8 +175,9 @@ class OTPActivity : AppCompatActivity() {
         var message = jsonObject.optString("message")
         if (statusCode == 200) {
           showSnackBar(otpActivity, binding.mainLayout, message)
-          binding.tvResendOtp.visibility = View.INVISIBLE
-          binding.tvRemaningSeconds.visibility = View.VISIBLE
+        /*  binding.tvResendOtp.visibility = View.INVISIBLE
+          binding.tvRemaningSeconds.visibility = View.VISIBLE*/
+          startCountDown()
         } else {
           showSnackBar(otpActivity, binding.mainLayout, message)
         }

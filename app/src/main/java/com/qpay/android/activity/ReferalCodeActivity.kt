@@ -16,6 +16,7 @@ import com.qpay.android.requestModel.ReferCodeRequest
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
+import com.qpay.android.utils.saveBooleanShrd
 import com.qpay.android.utils.showSnackBar
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -76,6 +77,7 @@ class ReferalCodeActivity : AppCompatActivity() {
         var statusCode = jsonObject.optInt("status")
         var message = jsonObject.optString("message")
         if (statusCode == 200) {
+          saveBooleanShrd(pinSetUpActivity, CommonUtils.isLogin, true)
           val intent = Intent(pinSetUpActivity, MainActivity::class.java)
           startActivity(intent)
           finish()

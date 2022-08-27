@@ -34,6 +34,9 @@ class StatusActivity : AppCompatActivity() {
     else if(type.equals("postpaid")){
       binding.tvMessage.text = intent.extras?.getString("message")
     }
+    else if(type.equals("recharge")){
+      binding.tvMessage.text = intent.extras?.getString("message")
+    }
 
     binding.btnGoToHome.setOnClickListener {
       val intent = Intent(baseContext, MainActivity::class.java)

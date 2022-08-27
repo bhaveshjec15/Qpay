@@ -105,7 +105,7 @@ class EditProfileActivity : AppCompatActivity() {
       )
       image1 = Part.createFormData(
         "image",
-        imageFileDoc!!.getName(),
+        imageFileDoc!!.name,
         requestFile11
       )
     }
@@ -215,6 +215,9 @@ class EditProfileActivity : AppCompatActivity() {
       0 -> {
         if (resultCode == RESULT_OK) {
           if (outputFileUriDoc != null) {
+            selectedImagePath =
+              CommonUtils.getRealPathFromURI(this, outputFileUriDoc!!)
+            imageFileDoc = File(selectedImagePath)
             var ims: InputStream? = null
             try {
               ims = this.getContentResolver()

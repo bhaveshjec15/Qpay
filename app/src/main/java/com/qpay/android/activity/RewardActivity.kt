@@ -69,13 +69,19 @@ class RewardActivity : AppCompatActivity() {
         var message = jsonObject.optString("message")
         if (statusCode == 200) {
           var dataObject = jsonObject.optJSONObject("data")
-          var totalPoints1 = dataObject.optJSONObject("totalRwdPts").toString()
-          var totalAmount1 = dataObject.optJSONObject("balanceRwdPts").toString()
-          totalPoints = totalPoints1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
-          totalAmount = totalAmount1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
-          binding.tvPoints.text = totalPoints + " Points"
-
-          Log.e("tt", totalPoints!!)
+          try {
+            if(dataObject !=null){
+              var totalPoints1 = dataObject.optJSONObject("totalRwdPts").toString()
+              var totalAmount1 = dataObject.optJSONObject("balanceRwdPts").toString()
+              totalPoints = totalPoints1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
+              totalAmount = totalAmount1.replace("{", "").replace("}", "").replace("\"", "").split(":")[1]
+              binding.tvPoints.text = totalPoints + " Points"
+            }else{
+              binding.tvPoints.text = "0" + " Points"
+            }
+          }catch (e: Exception){
+            binding.tvPoints.text = "0" + " Points"
+          }
         } else {
           showSnackBar(baseContext, binding.mainLayout, message)
         }

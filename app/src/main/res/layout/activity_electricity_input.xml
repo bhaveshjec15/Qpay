@@ -3,144 +3,191 @@
   <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/mainLayout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      tools:context=".electricty.ElectricityInputActivity"
-      android:id="@+id/mainLayout"
       android:background="@drawable/bg_common"
+      tools:context=".electricty.ElectricityInputActivity"
       >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        >
       <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          android:orientation="horizontal"
-          android:padding="@dimen/_10sdp"
-          android:weightSum="2"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
           >
-
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_weight="0.2"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic__back_arrow"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1.7"
-            android:layout_marginRight="@dimen/_20sdp"
-            android:text="Electricity"
-            android:textColor="@color/colorGray"
-            />
-        <ImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_bbps"
-            />
-      </LinearLayout>
-
-
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="abc"
-          android:visibility="gone"
-          android:id="@+id/tvLabel"
-          android:textColor="@color/colorBlack"
-          android:padding="@dimen/_10sdp"/>
-
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="@dimen/_40sdp"
-          android:orientation="horizontal"
-          android:weightSum="2">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_bbps"
-            android:layout_margin="@dimen/_5sdp"
-            android:layout_weight="0.2"/>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.8"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            android:weightSum="2"
+            >
 
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:text="name"
-              android:id="@+id/tvBillerName"
-              android:ellipsize="end"
+          <ImageView
+              android:id="@+id/iv_back"
+              android:layout_width="@dimen/_15sdp"
+              android:layout_height="wrap_content"
               android:layout_gravity="center"
+              android:layout_weight="0.2"
+              android:src="@drawable/ic__back_arrow"
+              />
+          <com.google.android.material.textview.MaterialTextView
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:layout_marginLeft="@dimen/_10sdp"
+              android:layout_marginRight="@dimen/_20sdp"
+              android:layout_weight="1.7"
               android:gravity="center_vertical"
-              android:padding="@dimen/_5sdp"
-              android:textColor="@color/colorBlack"/>
-
+              android:text="Electricity"
+              android:textColor="@color/colorGray"
+              android:textStyle="bold"
+              />
+          <ImageView
+              android:layout_width="@dimen/_30sdp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:src="@drawable/ic_bbps"
+              />
         </LinearLayout>
 
-      </LinearLayout>
-
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="?actionBarSize"
-          android:layout_marginLeft="@dimen/_5sdp"
-          android:layout_marginRight="@dimen/_5sdp"
-          android:layout_marginTop="@dimen/_10sdp"
-          android:background="@drawable/bg_edittxt"
-          android:orientation="horizontal"
-          android:weightSum="2"
-          >
-
-        <EditText
-            android:id="@+id/etVehicleNumber"
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:backgroundTint="#EEF1FB"
-            android:hint="Enter Vehicle Number"
-            android:paddingStart="@dimen/_10sdp"
-            android:textColor="@color/colorGray"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_margin="@dimen/_5sdp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            />
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="abc"
+            android:textColor="@color/colorBlack"
+            android:visibility="gone"
             />
 
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+              <ImageView
+                  android:id="@+id/logo"
+                  android:layout_width="@dimen/_30sdp"
+                  android:layout_height="match_parent"
+                  android:layout_margin="@dimen/_5sdp"
+                  android:layout_weight="0.2"
+                  android:src="@drawable/ic_bbps"
+                  />
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1.8"
+                  android:orientation="vertical"
+                  >
+
+                <TextView
+                    android:id="@+id/tvBillerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_5sdp"
+                    android:text="name"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_edittext_new"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+              <EditText
+                  android:id="@+id/etVehicleNumber"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_weight="2"
+                  android:backgroundTint="#EEF1FB"
+                  android:hint="Enter Vehicle Number"
+                  android:paddingStart="@dimen/_10sdp"
+                  android:textColor="@color/colorGray"
+                  />
+
+
+            </LinearLayout>
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/bg_btn"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/proceed"
+            android:textColor="@color/colorWhite"
+            />
       </LinearLayout>
-      <Button
-          android:id="@+id/btnSubmit"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="@dimen/_20sdp"
-          android:layout_marginLeft="@dimen/_20sdp"
-          android:layout_marginRight="@dimen/_20sdp"
-          android:layout_marginTop="@dimen/_30sdp"
-          android:background="@drawable/bg_btn"
-          android:foreground="?android:attr/selectableItemBackground"
-          android:text="@string/proceed"
-          android:textColor="@color/colorWhite"
-          />
-    </LinearLayout>
+
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 

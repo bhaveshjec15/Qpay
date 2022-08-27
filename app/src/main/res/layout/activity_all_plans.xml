@@ -36,9 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_weight="1.7"
-            android:gravity="center"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
             android:text="@string/mobile_recharge"
             android:textColor="@color/colorGray"
             />
@@ -81,6 +83,7 @@
               android:gravity="center_vertical"
               android:padding="@dimen/_5sdp"
               android:text="name"
+              android:textStyle="bold"
               android:textColor="@color/colorBlack"
               />
 

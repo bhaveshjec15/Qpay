@@ -102,7 +102,7 @@ class RechargePayActivity : AppCompatActivity() {
         } else {
           response1 = response.body()?.string()
         }
-        Log.e("response", "electricityBillPay: " + response1.toString())
+        Log.e("response", "prepaidRecharge: " + response1.toString())
         var jsonObject = JSONObject(response1)
         var statusCode = jsonObject.optInt("status")
         var message = jsonObject.optString("message")

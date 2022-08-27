@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
   <androidx.constraintlayout.widget.ConstraintLayout
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
       android:id="@+id/mainLayout"
+      android:layout_height="match_parent">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
       android:background="@drawable/bg_common"
-      tools:context=".activity.OTPActivity"
+      android:paddingBottom="@dimen/_20sdp"
       >
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,10 +28,10 @@
           >
 
         <ImageView
+            android:id="@+id/iv_back"
             android:layout_width="@dimen/_15sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/iv_back"
             android:src="@drawable/ic__back_arrow"
             />
         <com.google.android.material.textview.MaterialTextView
@@ -64,50 +68,83 @@
           android:gravity="center"
           android:padding="@dimen/_5sdp"
           />
-     <com.kevinschildhorn.otpview.OTPView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:inputType="number"
-         android:id="@+id/pinview"
-         app:otp_showCursor="true"
-         app:otp_backgroundImage="@drawable/bg_otp"
-         app:otp_cursorColor="@color/colorGray"
-         app:otp_marginBetween="@dimen/_5sdp"
-         android:layout_gravity="center"
-         app:otp_itemWidth="@dimen/_40sdp"
-         app:otp_itemHeight="@dimen/_40sdp"
-         app:otp_itemCount="6"/>
+      <com.kevinschildhorn.otpview.OTPView
+          android:id="@+id/pinview"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:inputType="number"
+          app:otp_backgroundImage="@drawable/bg_otp"
+          app:otp_cursorColor="@color/colorGray"
+          app:otp_itemCount="6"
+          app:otp_itemHeight="@dimen/_40sdp"
+          app:otp_itemWidth="@dimen/_40sdp"
+          app:otp_marginBetween="@dimen/_5sdp"
+          app:otp_showCursor="true"
+          />
 
-      <RelativeLayout
+      <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="@dimen/_30sdp"
-          android:layout_marginLeft="@dimen/_15sdp"
-          android:layout_gravity="center"
+          android:orientation="horizontal"
           android:gravity="center"
-          android:layout_marginRight="@dimen/_15sdp">
-
+          android:id="@+id/layout_remaning"
+          >
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="OTP:"
+            />
+        <TextView
+            android:id="@+id/tvRemaningSeconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:text="03:00"
-            android:gravity="center_vertical"
-            android:id="@+id/tvRemaningSeconds"/>
+            android:textColor="@color/black"
+            />
+      </LinearLayout>
 
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/_10sdp"
+          android:layout_marginRight="@dimen/_10sdp"
+          android:gravity="center"
+          android:orientation="horizontal"
+          >
         <TextView
+            android:id="@+id/tvResendOtp"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_green_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_5sdp"
             android:text="Resend Otp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:textColor="@color/colorBtn"
             android:textStyle="bold"
-            android:visibility="invisible"
-            android:gravity="center_vertical"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tvChangeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:id="@+id/tvResendOtp"/>
-
-
-
-      </RelativeLayout>
-
+            android:background="@drawable/btn_green_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_5sdp"
+            android:text="Change Number"
+            android:textColor="@color/colorBtn"
+            android:textStyle="bold"
+            android:visibility="visible"
+            />
+      </LinearLayout>
       <!--<com.goodiebag.pinview.Pinview
           android:id="@+id/pinview"
           android:layout_width="match_parent"
@@ -128,9 +165,22 @@
           android:visibility="gone"
           />
     </LinearLayout>
-
-
-
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/bg_btn"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Verify"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="parent"
+        />
+  </RelativeLayout>
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -7,8 +7,10 @@ import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.qpay.android.R
+import com.qpay.android.adapter.SliderNewAdapter
 import com.qpay.android.databinding.ActivityFasTagBinding
 import com.qpay.android.databinding.ActivityFasTagDetailsBinding
+import com.qpay.android.model.SliderData
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.FasTagBillerRequest
 import com.qpay.android.requestModel.FasTagFetchBillRequest
@@ -18,6 +20,8 @@ import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
 import com.qpay.android.utils.showSnackBar
+import com.smarteist.autoimageslider.SliderAnimations.SIMPLETRANSFORMATION
+import com.smarteist.autoimageslider.SliderView
 import com.squareup.picasso.Picasso
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -32,6 +36,9 @@ class FasTagDetailsActivity : AppCompatActivity() {
   var billerLabel: String? = ""
   var billerLogo: String? = ""
 
+  var adapterBanner: SliderNewAdapter? = null
+  private var sliderDataArrayList: ArrayList<SliderData>? = null
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this,R.layout.activity_fas_tag_details)
@@ -43,7 +50,8 @@ class FasTagDetailsActivity : AppCompatActivity() {
 
   override fun onResume() {
     super.onResume()
-
+    sliderDataArrayList = ArrayList()
+    callApiGetBanner()
     binding.tvLabel.text = billerLabel
     binding.tvBillerName.text = "For $billerName"
 
@@ -73,7 +81,67 @@ class FasTagDetailsActivity : AppCompatActivity() {
 
 
   }
+  private fun callApiGetBanner() {
+    sliderDataArrayList?.clear()
+    val apiInterface = ApiInterface.create().getBanner(
+      getStringShrd(
+        baseContext,
+        CommonUtils.accessToken
+      )
+    )
 
+    //apiInterface.enqueue( Callback<List<Movie>>())
+    apiInterface.enqueue(object : Callback<ResponseBody> {
+      override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+        var response1 = response.body()?.string()
+        var jsonObject = JSONObject(response1)
+        var statusCode = jsonObject.optInt("status")
+        var message = jsonObject.optString("message")
+        if (statusCode == 200) {
+          var jsonData = jsonObject.optJSONArray("data")
+
+          for (item in 0..jsonData.length() - 1) {
+            val model = SliderData()
+            var jsonImg = jsonData.optJSONObject(item)
+            model.imgUrl = jsonImg.optString("image_url")
+
+            sliderDataArrayList!!.add(model)
+
+            // after adding data to our array list we are passing
+            // that array list inside our adapter class.
+            adapterBanner = SliderNewAdapter(baseContext, sliderDataArrayList)
+
+            // belows line is for setting adapter
+            // to our slider view
+            binding.slider.setSliderAdapter(adapterBanner!!)
+
+            // below line is for setting animation to our slider.
+            binding.slider.setSliderTransformAnimation(SIMPLETRANSFORMATION)
+
+            // below line is for setting auto cycle duration.
+            binding.slider.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH)
+
+            // below line is for setting
+            // scroll time animation
+            binding.slider.setScrollTimeInSec(3)
+
+            // below line is for setting auto
+            // cycle animation to our slider
+            binding.slider.setAutoCycle(true)
+
+
+            adapterBanner?.notifyDataSetChanged()
+          }
+        }
+        Log.e("res", response1.toString())
+
+      }
+
+      override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+      }
+    })
+  }
   private fun callApi(param: FasTagFetchBillRequest, detailsActivity: FasTagDetailsActivity) {
     binding.progress.visibility = View.VISIBLE
     hideKeyboardFrom(baseContext, binding.root.rootView)

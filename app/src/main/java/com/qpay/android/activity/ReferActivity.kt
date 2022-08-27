@@ -49,7 +49,7 @@ class ReferActivity : AppCompatActivity() {
     binding = DataBindingUtil.setContentView(this, R.layout.activity_refer)
     binding.ivBack.setOnClickListener { finish() }
 
-    GlobalScope.launch { getContactList() }
+   // GlobalScope.launch { getContactList() }
   }
 
   override fun onResume() {
@@ -58,11 +58,15 @@ class ReferActivity : AppCompatActivity() {
     callApiGetProfile()
 
     binding.layoutShare.setOnClickListener {
+      var ll =this.resources.getString(R.string.submitText)
+      var appLink = "https://play.google.com/store/apps/details?id=com.qpay.android"
+      var content  = "Hi, i just invited you to use the QPay app (Refer Code : $referCode)!\n\n Step1:Use my link to download the app.\n Step2:Register using your mobile number.\nStep3:Start making24*7 instant money transfer, bill payments & more." +
+          "\n Download the app now:\n $appLink"
       if (referCode.isNotEmpty()) {
         val intent2: Intent = Intent()
         intent2.action = Intent.ACTION_SEND
         intent2.type = "text/plain"
-        intent2.putExtra(Intent.EXTRA_TEXT, "Refer Code: $referCode")
+        intent2.putExtra(Intent.EXTRA_TEXT, content)
         startActivity(Intent.createChooser(intent2, "Share via"))
       }
     }

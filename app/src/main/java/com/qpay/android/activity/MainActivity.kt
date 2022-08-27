@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     callApiGetProfile()
     bottom_navigation.selectedItemId = R.id.nav_home
 
-    tv_toolbar_header?.setTextColor(baseContext.resources.getColor(R.color.colorBtn))
+    //tvUserName?.setTextColor(baseContext.resources.getColor(R.color.colorBtn))
 
     loadFragment(HomeFragment.newInstance())
 
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
       var fragment: Fragment
       when (item.itemId) {
         R.id.nav_home -> {
-          tv_toolbar_header?.setText("Hi... Same")
-          tv_toolbar_header?.setTextColor(baseContext.resources.getColor(R.color.colorBtn))
+          //tvUserName?.setText("Hi... Same")
+        //  tvUserName?.setTextColor(baseContext.resources.getColor(R.color.colorBtn))
           fragment = HomeFragment()
           loadFragment(fragment)
           true
@@ -165,10 +165,10 @@ class MainActivity : AppCompatActivity() {
 
     userName.observe(this, Observer {
       if (it.isNullOrEmpty()) {
-        tv_toolbar_header.text = "Hi... Same"
+       // tvUserName.text = "Hi... Same"
         profile_image.setImageResource(R.drawable.ic_profile)
       } else {
-        tv_toolbar_header.text = "Hi... $it"
+      //  tvUserName.text = "Hi... $it"
         Picasso.get().load(it).into(profile_image)
       }
     })
