@@ -19,6 +19,7 @@
         >
 
       <LinearLayout
+          android:id="@+id/layout_personal"
           android:layout_width="match_parent"
           android:layout_height="?actionBarSize"
           android:layout_gravity="center_vertical"
@@ -50,6 +51,7 @@
           android:layout_height="?actionBarSize"
           android:layout_gravity="center_vertical"
           android:gravity="center_vertical"
+          android:visibility="gone"
           android:orientation="horizontal"
           android:padding="@dimen/_15sdp"
           >
@@ -77,6 +79,7 @@
           android:layout_height="?actionBarSize"
           android:layout_gravity="center_vertical"
           android:gravity="center_vertical"
+          android:visibility="gone"
           android:orientation="horizontal"
           android:padding="@dimen/_15sdp"
           >

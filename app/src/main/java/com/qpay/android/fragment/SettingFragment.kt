@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.qpay.android.R
+import com.qpay.android.activity.MyAccountActivity
 import com.qpay.android.activity.StaticPageActivity
 import com.qpay.android.databinding.FragmentHistoryBinding
 import com.qpay.android.databinding.FragmentSettingBinding
@@ -31,6 +32,10 @@ class SettingFragment : Fragment() {
   override fun onResume() {
     super.onResume()
 
+    binding.layoutPersonal.setOnClickListener {
+      val intent = Intent(requireActivity(), MyAccountActivity::class.java)
+      startActivity(intent)
+    }
 
     binding.layoutAbout.setOnClickListener {
       val intent = Intent(requireActivity(), StaticPageActivity::class.java)

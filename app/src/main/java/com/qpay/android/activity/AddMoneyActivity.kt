@@ -170,14 +170,16 @@ class AddMoneyActivity : AppCompatActivity() {
     if(phone.equals("")) phone = "9988776655" else phone
 
     var params: HashMap<String, String> = HashMap()
-    params.put(CFPaymentService.PARAM_APP_ID, "16086004d480e1cdbeeab54d19068061")
+   /* params.put(CFPaymentService.PARAM_APP_ID, "16086004d480e1cdbeeab54d19068061")*/
+    params.put(CFPaymentService.PARAM_APP_ID, "209459b30a11a72f9914a28a4c954902")
     params.put(CFPaymentService.PARAM_ORDER_ID, orderId)
     params.put(CFPaymentService.PARAM_ORDER_AMOUNT, binding.etAmount.text.toString())
     params.put(CFPaymentService.PARAM_CUSTOMER_NAME, name)
     params.put(CFPaymentService.PARAM_CUSTOMER_EMAIL, email)
     params.put(CFPaymentService.PARAM_CUSTOMER_PHONE, phone)
 
-    CFPaymentService.getCFPaymentServiceInstance().doPayment(this, params, token, "TEST")
+    /*CFPaymentService.getCFPaymentServiceInstance().doPayment(this, params, token, "TEST")*/
+    CFPaymentService.getCFPaymentServiceInstance().doPayment(this, params, token, "PROD")
 
   }
 
