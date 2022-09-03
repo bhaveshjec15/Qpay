@@ -15,6 +15,7 @@ import android.provider.ContactsContract.Contacts
 import android.provider.ContactsContract.PhoneLookup
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -52,7 +53,7 @@ class SendToMobileActivity : AppCompatActivity() {
 
     binding.tvViaPhone.setOnClickListener {
       val intent = Intent(this, SendAmountActivity::class.java)
-      intent.putExtra("type","phone")
+      intent.putExtra("type", "phone")
       startActivity(intent)
     }
 
@@ -66,23 +67,32 @@ class SendToMobileActivity : AppCompatActivity() {
 
       override fun afterTextChanged(s: Editable) {
         listTemp.clear()
-        if(list.size>0){
-          for (i in list.indices){
+        if (list.size > 0) {
+          for (i in list.indices) {
             var typeName = s.toString()
-            if(typeName.startsWith("9") || typeName.startsWith("8")|| typeName.startsWith("7")||typeName.startsWith("6")){
+            if (typeName.startsWith("9") || typeName.startsWith("8") || typeName.startsWith("7") || typeName.startsWith(
+                "6"
+              )
+            ) {
               var findName = list[i].number
-              if(findName.startsWith(typeName, true)){
+              if (findName.startsWith(typeName, true)) {
                 listTemp.add(list[i])
               }
-            }else{
+            } else {
               var findName = list[i].name
-              if(findName.startsWith(typeName, true)){
+              if (findName.startsWith(typeName, true)) {
                 listTemp.add(list[i])
               }
             }
           }
-          if(listTemp.size>0){
+          Log.e("ststst", listTemp.size.toString())
+          if (listTemp.size > 0) {
+
             adapter = ContactListAdapter(baseContext, listTemp)
+            binding.rvContactList.adapter = adapter
+            adapter?.notifyDataSetChanged()
+          }else{
+            adapter = ContactListAdapter(baseContext, list)
             binding.rvContactList.adapter = adapter
             adapter?.notifyDataSetChanged()
           }
@@ -93,7 +103,9 @@ class SendToMobileActivity : AppCompatActivity() {
   }
 
   @SuppressLint("Range")
-  suspend fun getContactList() {
+   fun getContactList() {
+    binding.etSearch.visibility = View.GONE
+    binding.progressSearch.visibility = View.VISIBLE
     list.clear()
     binding.progress.visibility = View.GONE
     showSnackBar(this, binding.mainLayout, "Loading Contacts...Please wait few seconds")
@@ -105,7 +117,19 @@ class SendToMobileActivity : AppCompatActivity() {
     if ((if (cur != null) cur.getCount() else 0) > 0) {
       while (cur != null && cur.moveToNext()) {
         val id: String = cur.getString(cur.getColumnIndex(Contacts._ID))
-        val name: String = cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME))
+        var name: String? = ""
+        if (cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME)) == null || cur.getString(
+            cur.getColumnIndex(
+              Contacts.DISPLAY_NAME
+            )
+          ).equals("null")
+        ) {
+          name = ""
+          Log.e("status","null")
+        } else {
+          name = cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME))
+        }
+
         if (cur.getInt(
             cur.getColumnIndex(Contacts.HAS_PHONE_NUMBER)
           ) > 0
@@ -124,7 +148,7 @@ class SendToMobileActivity : AppCompatActivity() {
             var model = ContactsModel()
             model.name = name
             model.number = phoneNo
-            model.img = retrieveContactPhoto(baseContext, phoneNo)
+            //model.img = retrieveContactPhoto(baseContext, phoneNo)
             list.add(model)
             //  Log.i(TAG, "Name: $name")
             //  Log.i(TAG, "Phone Number: $phoneNo")
@@ -138,6 +162,8 @@ class SendToMobileActivity : AppCompatActivity() {
     }
     runOnUiThread {
       if (list.size > 0) {
+        binding.etSearch.visibility = View.VISIBLE
+        binding.progressSearch.visibility = View.GONE
         binding.progress.visibility - View.GONE
         adapter = ContactListAdapter(this, list)
         binding.rvContactList.adapter = adapter

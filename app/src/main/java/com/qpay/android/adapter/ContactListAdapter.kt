@@ -49,7 +49,10 @@ class ContactListAdapter(val mContext: Context, private val mList: List<Contacts
       holder.profile.setImageBitmap(ItemsViewModel.img)
     }*/
 
-    holder.profile.text = ItemsViewModel.name[0].toString()
+    if(ItemsViewModel.name !=null){
+      holder.profile.text = ItemsViewModel.name[0].toString()
+    }
+
 
 
     holder.layoutMain.setOnClickListener {

@@ -59,10 +59,12 @@ class HistoryListAdapter(val mContext: Context, private val mList: List<HistoryM
       holder.amount.setTextColor(mContext.resources.getColor(R.color.colorBtn))
       holder.amount.setText("+ "+mContext.resources.getString(R.string.Rs)+" "+ItemsViewModel.amount)
       holder.icon.setImageDrawable(mContext.getDrawable(R.drawable.ic_money_credit))
+      holder.des.visibility = View.GONE
     }else{
       holder.icon.setImageDrawable(mContext.getDrawable(R.drawable.ic_money_debit))
       holder.amount.setTextColor(mContext.resources.getColor(R.color.colorRed))
       holder.amount.setText("- "+mContext.resources.getString(R.string.Rs)+" "+ItemsViewModel.amount)
+      holder.des.visibility = View.VISIBLE
     }
 
 

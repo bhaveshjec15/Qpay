@@ -110,7 +110,7 @@ class RechargePayActivity : AppCompatActivity() {
           showSnackBar(rechargePayActivity, binding.mainLayout, message)
 
           var msg =
-            baseContext.resources.getString(R.string.Rs) + " " + binding.etAmount.text.toString() + " Recharge Successfully "
+            baseContext.resources.getString(R.string.Rs) + " " + amount + " Recharge Successfully "
           val intent = Intent(rechargePayActivity, StatusActivity::class.java)
           intent.putExtra("type", "recharge")
           intent.putExtra("message", msg)

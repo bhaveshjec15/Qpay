@@ -11,9 +11,7 @@ import com.nabinbhandari.android.permissions.PermissionHandler
 import com.nabinbhandari.android.permissions.Permissions
 import com.qpay.android.R
 import com.qpay.android.databinding.ActivitySplashBinding
-import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getBooleanShrd
-import com.qpay.android.utils.getStringShrd
 import com.qpay.android.viewModel.SplashViewModel
 
 class SplashActivity : AppCompatActivity() {
@@ -28,7 +26,8 @@ class SplashActivity : AppCompatActivity() {
     /* val permissions =
        arrayOf<String>(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)*/
     val permissions =
-      arrayOf<String>(Manifest.permission.CAMERA, Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+      arrayOf<String>(Manifest.permission.CAMERA, Manifest.permission.READ_CONTACTS,
+        Manifest.permission.READ_EXTERNAL_STORAGE)
     Permissions.check(
       this /*context*/,
       permissions,
@@ -43,7 +42,7 @@ class SplashActivity : AppCompatActivity() {
   }
 
   private fun goToMain() {
-
+   // throw RuntimeException("Test Crash")
     if (getBooleanShrd( "isLogin") == true) {
       Handler().postDelayed({
      val intent = Intent(this, MainActivity::class.java)

@@ -2,10 +2,12 @@ package com.qpay.android.activity
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore.Images.Media
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidmads.library.qrgenearator.QRGContents.Type
 import androidmads.library.qrgenearator.QRGEncoder
 import androidx.appcompat.app.AppCompatActivity
@@ -34,12 +36,14 @@ class MyAccountActivity : AppCompatActivity() {
   val userImage: MutableLiveData<String?> = MutableLiveData("")
   val userPhone: MutableLiveData<String?> = MutableLiveData("")
   val kycStatus: MutableLiveData<String?> = MutableLiveData("")
+  var ivQrCode: Bitmap? = null
 
   var qrgEncoder: QRGEncoder? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_my_account)
+
 
     binding.ivBack.setOnClickListener {
       finish()
@@ -98,6 +102,16 @@ class MyAccountActivity : AppCompatActivity() {
       intent.putExtra("type","about")
       startActivity(intent)
     }
+
+    binding.ivShare.setOnClickListener {
+      val path: String = Media.insertImage(contentResolver, ivQrCode, "QR Code", null)
+      val uri = Uri.parse(path)
+
+      val intent = Intent(Intent.ACTION_SEND)
+      intent.type = "image/jpeg"
+      intent.putExtra(Intent.EXTRA_STREAM, uri)
+      startActivity(Intent.createChooser(intent, "Share Image"))
+    }
   }
 
   private fun logout() {
@@ -130,6 +144,7 @@ class MyAccountActivity : AppCompatActivity() {
       var bitmap = qrgEncoder.encodeAsBitmap()
       // Setting Bitmap to ImageView
       binding.ivQRCode.setImageBitmap(bitmap)
+      ivQrCode = bitmap
     } catch (e: WriterException) {
       Log.v(TAG, e.toString())
     }

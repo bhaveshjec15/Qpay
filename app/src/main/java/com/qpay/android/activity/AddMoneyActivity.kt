@@ -41,10 +41,7 @@ class AddMoneyActivity : AppCompatActivity() {
     binding.ivBack.setOnClickListener {
       finish()
     }
-  }
 
-  override fun onResume() {
-    super.onResume()
     callApiGetBalance()
     binding.tvOne.setOnClickListener {
       binding.etAmount.setText(binding.tvOne.text.toString().replace("+", ""))
@@ -78,6 +75,11 @@ class AddMoneyActivity : AppCompatActivity() {
     userBalance.observe(this, Observer {
       binding.currentBalance.text = it.toString()
     })
+  }
+
+  override fun onResume() {
+    super.onResume()
+
 
   }
 

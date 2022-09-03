@@ -7,9 +7,6 @@ import android.content.ContextWrapper
 import android.content.SharedPreferences
 import android.view.View
 
-
-
-
 class QPayApplication : Application() {
 
   val MyPREFERENCES = "MyPrefs"
@@ -25,7 +22,8 @@ class QPayApplication : Application() {
     super.onCreate()
     QPayApplication.appContext = applicationContext
     sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-
+   /* Instabug.Builder(this, "44a61b51f02880311f90537c3c08e4d3")
+      .build()*/
   }
 
   companion object {
