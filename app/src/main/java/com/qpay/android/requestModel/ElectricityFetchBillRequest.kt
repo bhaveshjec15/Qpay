@@ -10,10 +10,11 @@ data class ElectricityFetchBillRequest(
   @SerializedName("mobileNo")
   val mobileNo: String,
   @SerializedName("customerParams")
-  val customerParams: NumberData
+  val customerParams:  Map<String,String>
 )
 
+/*
 data class NumberData(
   @SerializedName("K Number")
   val number: String
-)
+)*/

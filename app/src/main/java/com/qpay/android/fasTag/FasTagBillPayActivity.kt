@@ -82,8 +82,6 @@ class FasTagBillPayActivity : AppCompatActivity() {
     super.onResume()
 
     binding.ivBack.setOnClickListener { finish() }
-    /*  var minAmount = billerMinAmtPay?.toFloat()
-      var maxAmount = billerMaxAmtPay?.toFloat()*/
 
     sliderDataArrayList = ArrayList()
     callApiGetBanner()
@@ -103,6 +101,8 @@ class FasTagBillPayActivity : AppCompatActivity() {
         showSnackBar(this, binding.mainLayout, "Please Enter Amount")
       } else {
         var enteredAmount = binding.etAmount.text.toString().toFloat()
+        var paramsMain: HashMap<String, String> = HashMap()
+        paramsMain.put(billerLabelPay!!, billerVehicleNumberPay!!)
 
         var param = FasTagBillPay(
           binding.etAmount.text.toString(),
@@ -111,7 +111,7 @@ class FasTagBillPayActivity : AppCompatActivity() {
           getStringShrd(baseContext, CommonUtils.mobileNumber),
           billerCustomerNamePay,
           billerRefPay,
-          VehicleData(billerVehicleNumberPay),
+          paramsMain,
         )
         callApi(param, this)
         Log.e("status", "perfect")

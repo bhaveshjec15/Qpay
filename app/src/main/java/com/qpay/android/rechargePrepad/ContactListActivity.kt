@@ -15,6 +15,7 @@ import android.provider.ContactsContract.Contacts
 import android.provider.ContactsContract.PhoneLookup
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
@@ -40,10 +41,7 @@ class ContactListActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_contact_list)
     GlobalScope.launch { getContactList() }
-  }
 
-  override fun onResume() {
-    super.onResume()
     binding.ivBack.setOnClickListener { finish() }
 
     binding.etSearch.addTextChangedListener(object : TextWatcher {
@@ -90,10 +88,11 @@ class ContactListActivity : AppCompatActivity() {
     })
   }
 
+
   @SuppressLint("Range")
   suspend fun getContactList() {
     list.clear()
-    binding.progress.visibility = View.GONE
+    binding.progress.visibility = View.VISIBLE
     showSnackBar(this, binding.mainLayout, "Loading Contacts...Please wait few seconds")
     val cr = contentResolver
     val cur: Cursor? = cr.query(
@@ -103,7 +102,18 @@ class ContactListActivity : AppCompatActivity() {
     if ((if (cur != null) cur.getCount() else 0) > 0) {
       while (cur != null && cur.moveToNext()) {
         val id: String = cur.getString(cur.getColumnIndex(Contacts._ID))
-        val name: String = cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME))
+        var name: String? = ""
+        if (cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME)) == null || cur.getString(
+            cur.getColumnIndex(
+              Contacts.DISPLAY_NAME
+            )
+          ).equals("null")
+        ) {
+          name = ""
+          Log.e("status","null")
+        } else {
+          name = cur.getString(cur.getColumnIndex(Contacts.DISPLAY_NAME))
+        }
         if (cur.getInt(
             cur.getColumnIndex(Contacts.HAS_PHONE_NUMBER)
           ) > 0
@@ -122,7 +132,7 @@ class ContactListActivity : AppCompatActivity() {
             var model = ContactsModel()
             model.name = name
             model.number = phoneNo
-            model.img = retrieveContactPhoto(baseContext, phoneNo)
+           // model.img = retrieveContactPhoto(baseContext, phoneNo)
             list.add(model)
             //  Log.i(TAG, "Name: $name")
             //  Log.i(TAG, "Phone Number: $phoneNo")
@@ -136,11 +146,11 @@ class ContactListActivity : AppCompatActivity() {
     }
     runOnUiThread {
       if (list.size > 0) {
-        binding.progress.visibility - View.GONE
+        binding.progress.visibility = View.GONE
         adapter = PrepadContactListAdapter(this, list)
         binding.rvContactList.adapter = adapter
         adapter?.notifyDataSetChanged()
-        binding.progress.visibility - View.GONE
+       // binding.progress.visibility = View.GONE
       }
     }
 

@@ -17,8 +17,6 @@ import com.qpay.android.electricty.ElectricityBillPayActivity
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.ElectricityBillPay
 import com.qpay.android.requestModel.PostPaidBillPay
-import com.qpay.android.requestModel.PostPaidData
-import com.qpay.android.requestModel.PostPaidDataNew
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
@@ -103,12 +101,15 @@ class PostPaidBillPayActivity : AppCompatActivity() {
         resources.getString(string.param_fastag), "9828520222", billerCustomerNamePay, billerRefPay,
         NewData(billerVehicleNumberPay),
       )*/
+      var paramsMain: HashMap<String, String> = HashMap()
+      paramsMain.put(billerLabelPay!!, billerVehicleNumberPay!!)
+
       var param = PostPaidBillPay(
         billerBalancePay?.toInt(),
         billerIdPay,
         resources.getString(string.param_postpaid), getStringShrd(baseContext,
           CommonUtils.mobileNumber), billerCustomerNamePay, billerRefPay,
-        PostPaidDataNew(billerVehicleNumberPay),
+        paramsMain,
       )
       callApi(param, this)
 

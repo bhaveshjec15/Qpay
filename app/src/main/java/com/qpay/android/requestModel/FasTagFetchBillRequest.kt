@@ -10,10 +10,11 @@ data class FasTagFetchBillRequest(
   @SerializedName("mobileNo")
   val mobileNo: String,
   @SerializedName("customerParams")
-  val customerParams: VehiclData
+  var customerParams: Map<String,String>
 )
 
+/*
 data class VehiclData(
   @SerializedName("Vehicle Number")
   val number: String
-)
+)*/

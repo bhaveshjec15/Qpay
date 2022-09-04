@@ -10,10 +10,11 @@ data class PostPaidFetchBillRequest(
   @SerializedName("mobileNo")
   val mobileNo: String,
   @SerializedName("customerParams")
-  val customerParams: PostPaidData
+  val customerParams: Map<String,String>
 )
 
+/*
 data class PostPaidData(
   @SerializedName("Mobile Number")
   val number: String
-)
+)*/

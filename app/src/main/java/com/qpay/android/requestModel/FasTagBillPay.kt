@@ -16,7 +16,7 @@ data class FasTagBillPay(
   @SerializedName("merchantTrxnRefId")
   val merchantTrxnRefId: String?,
   @SerializedName("customerParams")
-  val customerParams: VehicleData
+  val customerParams: Map<String,String>
 )
 
 data class VehicleData(

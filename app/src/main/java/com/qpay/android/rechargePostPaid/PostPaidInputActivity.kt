@@ -14,8 +14,6 @@ import com.qpay.android.electricty.ElectricityBillPayActivity
 import com.qpay.android.electricty.ElectricityInputActivity
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.ElectricityFetchBillRequest
-import com.qpay.android.requestModel.NumberData
-import com.qpay.android.requestModel.PostPaidData
 import com.qpay.android.requestModel.PostPaidFetchBillRequest
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
@@ -44,10 +42,6 @@ class PostPaidInputActivity : AppCompatActivity() {
     billerLogo = intent.extras?.getString("logo")
 
     binding.etVehicleNumber.hint = billerLabel
-  }
-
-  override fun onResume() {
-    super.onResume()
 
     binding.tvLabel.text = billerLabel
     binding.tvBillerName.text = "For $billerName"
@@ -66,16 +60,19 @@ class PostPaidInputActivity : AppCompatActivity() {
         showSnackBar(this, binding.mainLayout, "Please Enter Mobile Number")
       }
       else{
+        var paramsMain: HashMap<String, String> = HashMap()
+        paramsMain.put(billerLabel!!, binding.etVehicleNumber.text.toString())
+
         var param = PostPaidFetchBillRequest(billerId!!,resources.getString(string.param_postpaid),
-          getStringShrd(baseContext, CommonUtils.mobileNumber), PostPaidData(binding.etVehicleNumber.text.toString())
-        )
-      /*   var param = PostPaidFetchBillRequest(billerId!!,resources.getString(string.param_postpaid),
-           "8302693321", PostPaidData(binding.etVehicleNumber.text.toString())
-         )*/
+          getStringShrd(baseContext, CommonUtils.mobileNumber), paramsMain)
+        /*   var param = PostPaidFetchBillRequest(billerId!!,resources.getString(string.param_postpaid),
+             "8302693321", PostPaidData(binding.etVehicleNumber.text.toString())
+           )*/
         callApi(param, this)
       }
     }
   }
+
 
   private fun callApi(param: PostPaidFetchBillRequest, postPaidInputActivity: PostPaidInputActivity) {
     binding.progress.visibility = View.VISIBLE
@@ -103,20 +100,26 @@ class PostPaidInputActivity : AppCompatActivity() {
         var message = jsonObject.optString("message")
         if (statusCode == 200) {
           var dataObj = jsonObject.optJSONObject("data")
+          var billAmount = dataObj.optInt("amount")
+          if(billAmount == 0){
+            showSnackBar(postPaidInputActivity, binding.mainLayout, "There is currently no amount due on your bill")
+          }else{
+            val intent = Intent(postPaidInputActivity, PostPaidBillPayActivity::class.java)
+            intent.putExtra("billerId", billerId)
+            intent.putExtra("billerName", billerName)
+            intent.putExtra("paramName", billerLabel)
+            intent.putExtra("customerName", dataObj.optString("accountHolderName"))
+            intent.putExtra("refId",dataObj.optString("refId"))
+            intent.putExtra("logo",billerLogo)
+            intent.putExtra("vehicleNumber",binding.etVehicleNumber.text.toString())
+            intent.putExtra("balance",dataObj.optInt("amount").toString())
+            intent.putExtra("status",dataObj.optString("status"))
+            intent.putExtra("dueDate",dataObj.optString("dueDate"))
+            startActivity(intent)
+          }
           var additionalParams = dataObj.optJSONObject("additionalParams")
 
-          val intent = Intent(postPaidInputActivity, PostPaidBillPayActivity::class.java)
-          intent.putExtra("billerId", billerId)
-          intent.putExtra("billerName", billerName)
-          intent.putExtra("paramName", billerLabel)
-          intent.putExtra("customerName", dataObj.optString("accountHolderName"))
-          intent.putExtra("refId",dataObj.optString("refId"))
-          intent.putExtra("logo",billerLogo)
-          intent.putExtra("vehicleNumber",binding.etVehicleNumber.text.toString())
-          intent.putExtra("balance",dataObj.optInt("amount").toString())
-          intent.putExtra("status",dataObj.optString("status"))
-          intent.putExtra("dueDate",dataObj.optString("dueDate"))
-          startActivity(intent)
+
         }
         else if (statusCode == 499){
 

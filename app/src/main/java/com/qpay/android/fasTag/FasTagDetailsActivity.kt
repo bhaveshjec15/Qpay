@@ -15,7 +15,6 @@ import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.FasTagBillerRequest
 import com.qpay.android.requestModel.FasTagFetchBillRequest
 import com.qpay.android.requestModel.LoginRequest
-import com.qpay.android.requestModel.VehiclData
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
@@ -28,6 +27,7 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Objects
 
 class FasTagDetailsActivity : AppCompatActivity() {
   private lateinit var binding: ActivityFasTagDetailsBinding
@@ -41,18 +41,19 @@ class FasTagDetailsActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    binding = DataBindingUtil.setContentView(this,R.layout.activity_fas_tag_details)
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_fas_tag_details)
     billerId = intent.extras?.getString("billerId")
     billerName = intent.extras?.getString("billerName")
     billerLabel = intent.extras?.getString("paramName")
     billerLogo = intent.extras?.getString("logo")
-  }
 
-  override fun onResume() {
-    super.onResume()
     sliderDataArrayList = ArrayList()
     callApiGetBanner()
-    binding.tvLabel.text = billerLabel
+    if (billerLabel != null) {
+      binding.tvLabel.text = billerLabel
+      binding.etVehicleNumber.hint = billerLabel
+    }
+
     binding.tvBillerName.text = "For $billerName"
 
     var logo = billerLogo
@@ -65,22 +66,25 @@ class FasTagDetailsActivity : AppCompatActivity() {
     binding.ivBack.setOnClickListener { finish() }
 
     binding.btnSubmit.setOnClickListener {
-      if(binding.etVehicleNumber.text.toString().isNullOrEmpty()){
+      if (binding.etVehicleNumber.text.toString().isNullOrEmpty()) {
         showSnackBar(this, binding.mainLayout, "Please Enter Valid Vehicle Number")
-      }
-      else{
-        var param = FasTagFetchBillRequest(billerId!!,resources.getString(R.string.param_fastag),
-         getStringShrd(baseContext,CommonUtils.mobileNumber), VehiclData(binding.etVehicleNumber.text.toString())
+      } else {
+        /* var param = FasTagFetchBillRequest(billerId!!,resources.getString(R.string.param_fastag),
+           "9828520222", VehiclData(binding.etVehicleNumber.text.toString())
+         )*/
+        var paramsMain: HashMap<String, String> = HashMap()
+        paramsMain.put(billerLabel!!, binding.etVehicleNumber.text.toString())
+
+        var param = FasTagFetchBillRequest(
+          billerId!!, resources.getString(R.string.param_fastag),
+          getStringShrd(baseContext, CommonUtils.mobileNumber), paramsMain
         )
-       /* var param = FasTagFetchBillRequest(billerId!!,resources.getString(R.string.param_fastag),
-          "9828520222", VehiclData(binding.etVehicleNumber.text.toString())
-        )*/
+
         callApi(param, this)
       }
     }
-
-
   }
+
   private fun callApiGetBanner() {
     sliderDataArrayList?.clear()
     val apiInterface = ApiInterface.create().getBanner(
@@ -142,6 +146,7 @@ class FasTagDetailsActivity : AppCompatActivity() {
       }
     })
   }
+
   private fun callApi(param: FasTagFetchBillRequest, detailsActivity: FasTagDetailsActivity) {
     binding.progress.visibility = View.VISIBLE
     hideKeyboardFrom(baseContext, binding.root.rootView)
@@ -169,23 +174,32 @@ class FasTagDetailsActivity : AppCompatActivity() {
         if (statusCode == 200) {
           var dataObj = jsonObject.optJSONObject("data")
           var additionalParams = dataObj.optJSONObject("additionalParams")
+          var availableBalance: String? = ""
+          if (additionalParams != null) {
 
+            var iterator: Iterator<String> = additionalParams.keys();
+            while (iterator.hasNext()) {
+              var key = iterator.next()
+              if (key.toString().contains("Balance")) {
+                Log.i("TAG", "key:" + key + "--Value::" + additionalParams.optString(key))
+                availableBalance = additionalParams.optString(key)
+                break
+              }
+            }
+          }
           val intent = Intent(detailsActivity, FasTagBillPayActivity::class.java)
           intent.putExtra("billerId", billerId)
           intent.putExtra("billerName", billerName)
           intent.putExtra("paramName", billerLabel)
           intent.putExtra("customerName", dataObj.optString("accountHolderName"))
-          intent.putExtra("refId",dataObj.optString("refId"))
-        /*  intent.putExtra("min",additionalParams.optString("Minimum Amount for Top-up"))
-          intent.putExtra("max",additionalParams.optString("Maximum Permissible Recharge Amount"))*/
-          intent.putExtra("logo",billerLogo)
-          intent.putExtra("vehicleNumber",binding.etVehicleNumber.text.toString())
-          intent.putExtra("balance",additionalParams.optString("Available Balance"))
+          intent.putExtra("refId", dataObj.optString("refId"))
+          intent.putExtra("logo", billerLogo)
+          intent.putExtra("vehicleNumber", binding.etVehicleNumber.text.toString())
+          intent.putExtra("balance", availableBalance)
           startActivity(intent)
         } else {
           showSnackBar(detailsActivity, binding.mainLayout, message)
         }
-
 
       }
 

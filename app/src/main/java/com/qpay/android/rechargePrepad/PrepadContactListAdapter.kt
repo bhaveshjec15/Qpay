@@ -48,7 +48,9 @@ class PrepadContactListAdapter(val mContext: Context, private val mList: List<Co
    /* if(ItemsViewModel.img !=null){
       holder.profile.setImageBitmap(ItemsViewModel.img)
     }*/
-    holder.profile.text = ItemsViewModel.name[0].toString()
+    if(ItemsViewModel.name !=null){
+      holder.profile.text = ItemsViewModel.name[0].toString()
+    }
     holder.layoutMain.setOnClickListener {
       val intent = Intent(mContext, AllPlansActivity::class.java)
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

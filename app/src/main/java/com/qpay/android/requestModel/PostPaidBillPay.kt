@@ -16,10 +16,5 @@ data class PostPaidBillPay(
   @SerializedName("merchantTrxnRefId")
   val merchantTrxnRefId: String?,
   @SerializedName("customerParams")
-  val customerParams: PostPaidDataNew
-)
-
-data class PostPaidDataNew(
-  @SerializedName("Mobile Number")
-  val number: String?
+  val customerParams: Map<String,String>
 )

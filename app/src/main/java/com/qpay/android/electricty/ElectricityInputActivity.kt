@@ -16,9 +16,6 @@ import com.qpay.android.fasTag.FasTagDetailsActivity
 import com.qpay.android.model.SliderData
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.ElectricityFetchBillRequest
-import com.qpay.android.requestModel.FasTagFetchBillRequest
-import com.qpay.android.requestModel.NumberData
-import com.qpay.android.requestModel.VehiclData
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
@@ -52,10 +49,7 @@ class ElectricityInputActivity : AppCompatActivity() {
 
     binding.etVehicleNumber.hint = billerLabel
     saveStringShrd(baseContext,CommonUtils.paramInputKey,billerLabel!!)
-  }
 
-  override fun onResume() {
-    super.onResume()
     sliderDataArrayList = ArrayList()
     callApiGetBanner()
 
@@ -76,16 +70,19 @@ class ElectricityInputActivity : AppCompatActivity() {
         showSnackBar(this, binding.mainLayout, "Please Enter Valid Vehicle Number")
       }
       else{
-         var param = ElectricityFetchBillRequest(billerId!!,resources.getString(R.string.param_electricity),
-          getStringShrd(baseContext,CommonUtils.mobileNumber), NumberData(binding.etVehicleNumber.text.toString())
-         )
-       /* var param = ElectricityFetchBillRequest(billerId!!,resources.getString(string.param_fastag),
-          "9828520222", NumberData(binding.etVehicleNumber.text.toString())
-        )*/
+        var paramsMain: HashMap<String, String> = HashMap()
+        paramsMain.put(billerLabel!!, binding.etVehicleNumber.text.toString())
+        var param = ElectricityFetchBillRequest(billerId!!,resources.getString(R.string.param_electricity),
+          getStringShrd(baseContext,CommonUtils.mobileNumber), paramsMain)
+        /* var param = ElectricityFetchBillRequest(billerId!!,resources.getString(string.param_fastag),
+           "9828520222", NumberData(binding.etVehicleNumber.text.toString())
+         )*/
         callApi(param, this)
       }
     }
   }
+
+
   private fun callApiGetBanner() {
     sliderDataArrayList?.clear()
     val apiInterface = ApiInterface.create().getBanner(

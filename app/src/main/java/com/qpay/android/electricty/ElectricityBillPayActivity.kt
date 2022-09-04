@@ -19,7 +19,6 @@ import com.qpay.android.fasTag.FasTagBillPayActivity
 import com.qpay.android.model.SliderData
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.requestModel.ElectricityBillPay
-import com.qpay.android.requestModel.VehicleData
 import com.qpay.android.utils.CommonUtils
 import com.qpay.android.utils.getStringShrd
 import com.qpay.android.utils.hideKeyboardFrom
@@ -120,7 +119,7 @@ class ElectricityBillPayActivity : AppCompatActivity() {
 
       var params: HashMap<String, String> = HashMap()
 
-      params.put(getStringShrd(baseContext, CommonUtils.paramInputKey), billerVehicleNumberPay!!)
+      params.put(billerLabelPay!!,billerVehicleNumberPay!!)
       var param = ElectricityBillPay(
         billerBalancePay?.toInt(),
         billerIdPay,
