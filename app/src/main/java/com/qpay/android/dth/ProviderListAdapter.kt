@@ -1,4 +1,4 @@
-package com.qpay.android.rechargePostPaid
+package com.qpay.android.dth
 
 import android.content.Context
 import android.content.Intent
@@ -10,10 +10,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.qpay.android.R
-import com.qpay.android.rechargePostPaid.PostPaidListAdapter.ViewHolder
+import com.qpay.android.dth.ProviderListAdapter.ViewHolder
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.*
 
-class PostPaidListAdapter(val mContext: Context, private val mList: List<PostPaidBillerListModel>) :
+class ProviderListAdapter(val mContext: Context, private val mList: List<ProviderListModel>) :
   RecyclerView.Adapter<ViewHolder>() {
 
   // create new views
@@ -34,7 +35,7 @@ class PostPaidListAdapter(val mContext: Context, private val mList: List<PostPai
     holder.name.setText(ItemsViewModel.billerName)
 
     holder.layoutMain.setOnClickListener {
-    val intent = Intent(mContext, PostPaidInputActivity::class.java)
+   val intent = Intent(mContext, DthDetailsActivity::class.java)
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       intent.putExtra("billerId", ItemsViewModel.billerId)
       intent.putExtra("billerName", ItemsViewModel.billerName)

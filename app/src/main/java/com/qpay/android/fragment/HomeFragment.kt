@@ -28,8 +28,11 @@ import com.qpay.android.activity.SendToMobileActivity
 import com.qpay.android.adapter.SliderNewAdapter
 import com.qpay.android.databinding.ActivityLoginBinding
 import com.qpay.android.databinding.FragmentHomeBinding
+import com.qpay.android.dth.ProviderListActivity
 import com.qpay.android.electricty.ElectrictyBillerList
 import com.qpay.android.fasTag.FasTagActivity
+import com.qpay.android.gas.GasPipeProviderListActivity
+import com.qpay.android.gas_cylinder.GasCynProviderListActivity
 import com.qpay.android.model.SliderData
 import com.qpay.android.network.ApiInterface
 import com.qpay.android.rechargePostPaid.PostpaidBillerList
@@ -95,6 +98,11 @@ class HomeFragment : Fragment() {
         callApiGetBanner()
         binding.layoutElectricity.setOnClickListener {
             val intent = Intent(activity, ElectrictyBillerList::class.java)
+            startActivity(intent)
+        }
+
+        binding.layoutDth.setOnClickListener {
+            val intent = Intent(activity, ProviderListActivity::class.java)
             startActivity(intent)
         }
 
@@ -190,6 +198,15 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.layoutGasCylinder.setOnClickListener {
+            val intent = Intent(activity, GasCynProviderListActivity::class.java)
+            startActivity(intent)
+        }
+        binding.layoutGas.setOnClickListener {
+            val intent = Intent(activity, GasPipeProviderListActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 
@@ -236,10 +253,11 @@ class HomeFragment : Fragment() {
                 var message = jsonObject.optString("message")
                 if (statusCode == 200) {
                     var jsonData = jsonObject.optJSONArray("data")
-
+                    Log.e("response_banner",jsonData.toString())
                     for (item in 0..jsonData.length() - 1) {
                         val model = SliderData()
                         var jsonImg = jsonData.optJSONObject(item)
+
                         model.imgUrl = jsonImg.optString("image_url")
 
                         sliderDataArrayList!!.add(model)

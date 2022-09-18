@@ -1,6 +1,36 @@
 <resources>
   <string name="app_name">QPay</string>
   <!-- TODO: Remove or change this placeholder text -->
+  <!--
+   "data": [
+        "LOAN",
+        "INSURANCE",
+        "GAS",
+        "ELECTRICITY",
+        "MOBILE PREPAID",
+        "FASTAG",
+        "EDUCATION",
+        "WATER",
+        "ENTERTAINMENT",
+        "LANDLINE POSTPAID",
+        "MOBILE POSTPAID",
+        "CABLE",
+        "DTH",
+        "BROADBAND POSTPAID",
+        "LPG GAS",
+        "MUNICIPAL TAXES",
+        "HOUSING SOCIETY",
+        "MUNICIPAL SERVICES",
+        "HOSPITAL",
+        "SUBSCRIPTION",
+        "TRAVEL-SUB",
+        "CREDIT CARD",
+        "TRANSIT CARD",
+        "CLUBS AND ASSOCIATIONS",
+        "APARTMENT",
+        "RECURRING DEPOSIT"
+    ]
+  -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="proceed">Proceed</string>
   <string name="enter_your_mobile_no">Enter Your Mobile No</string>
@@ -8,6 +38,9 @@
   <string name="yesterday">Yesterday</string>
   <string name="Rs">\u20B9</string>
   <string name="param_fastag">FASTAG</string>
+  <string name="param_dth">DTH</string>
+  <string name="param_gas_cylinder">LPG GAS</string>
+  <string name="param_gas_pipe">GAS</string>
   <string name="param_electricity">ELECTRICITY</string>
   <string name="proceed_to_pay">Proceed To Pay</string>
   <string name="param_postpaid">MOBILE POSTPAID</string>

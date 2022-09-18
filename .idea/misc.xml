@@ -24,7 +24,10 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/btn_green_border.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic__back_arrow.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_app_icon.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_camping_gas.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_change_pin.xml" value="0.13" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_dth.xml" value="0.1305" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_gas.xml" value="0.1305" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_home.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/drawable/ic_right_arrow_new.xml" value="0.1305" />
@@ -36,6 +39,8 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_bank_amount_transfer.xml" value="0.25416666666666665" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_bank_transfer.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_contact_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_dth_details.xml" value="0.11197916666666667" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_dth_pay.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_edit_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_electricity_bill_pay.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_electricity_input.xml" value="0.22826086956521738" />
@@ -43,6 +48,11 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag_bill_pay.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_fas_tag_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_gas_cyn_bill_pay.xml" value="0.23007246376811594" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_gas_cyn_details.xml" value="0.23007246376811594" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_gas_cyn_provider_list.xml" value="0.23007246376811594" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_gas_pipe_details.xml" value="0.23007246376811594" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_gas_pipe_provider_list.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_kyc.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
@@ -53,6 +63,7 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_bill_pay.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_post_paid_input.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_postpaid_biller_list.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_provider_list.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_qrcode_scan.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_recharge_pay.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/activity_redeem.xml" value="0.23007246376811594" />
@@ -75,6 +86,7 @@
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_all_pack.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_combo_pack.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_contact.xml" value="0.22826086956521738" />
+        <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_custom_param.xml" value="0.23007246376811594" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_fastag_biller.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_full_talk_time_pack.xml" value="0.22826086956521738" />
         <entry key="..\:/MyProject/QPay/Code/Qpay/app/src/main/res/layout/item_history.xml" value="0.22826086956521738" />

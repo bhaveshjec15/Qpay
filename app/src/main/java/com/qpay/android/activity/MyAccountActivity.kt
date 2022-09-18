@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.os.SystemClock
 import android.provider.MediaStore.Images.Media
 import android.util.Log
 import android.view.View
@@ -37,7 +38,7 @@ class MyAccountActivity : AppCompatActivity() {
   val userPhone: MutableLiveData<String?> = MutableLiveData("")
   val kycStatus: MutableLiveData<String?> = MutableLiveData("")
   var ivQrCode: Bitmap? = null
-
+  private var mLastClickTime: Long = 0
   var qrgEncoder: QRGEncoder? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,6 +105,11 @@ class MyAccountActivity : AppCompatActivity() {
     }
 
     binding.ivShare.setOnClickListener {
+
+      if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+        return@setOnClickListener
+      }
+      mLastClickTime = SystemClock.elapsedRealtime();
       val path: String = Media.insertImage(contentResolver, ivQrCode, "QR Code", null)
       val uri = Uri.parse(path)
 

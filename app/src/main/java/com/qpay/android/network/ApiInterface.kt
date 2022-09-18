@@ -1,5 +1,9 @@
 package com.qpay.android.network
 
+import com.qpay.android.dth.DthFetchBillRequest
+import com.qpay.android.dth.dthBillPay
+import com.qpay.android.gas_cylinder.GasCynFetchBillRequest
+import com.qpay.android.rechargePostPaid.PostPaidQuickBillPay
 import com.qpay.android.rechargePrepad.PaymentValidationRequestModel
 import com.qpay.android.rechargePrepad.RechargePay
 import com.qpay.android.requestModel.AddBankRequest
@@ -102,7 +106,14 @@ interface ApiInterface
   fun getFasTagBill(@Header ("x-access-token") header: String,@Body param: FasTagFetchBillRequest) : Call<ResponseBody>
 
   @POST("bbps/biller/fetchBill")
+  fun getDthBill(@Header ("x-access-token") header: String,@Body param: DthFetchBillRequest) : Call<ResponseBody>
+
+  @POST("bbps/biller/fetchBill")
   fun getElectricityBill(@Header ("x-access-token") header: String,@Body param: ElectricityFetchBillRequest) : Call<ResponseBody>
+
+
+  @POST("bbps/biller/fetchBill")
+  fun getGasCynBill(@Header ("x-access-token") header: String,@Body param: GasCynFetchBillRequest) : Call<ResponseBody>
 
   @POST("bbps/bbpsPrepaid/getOperatorAndCircleInfoAndMobilePlan")
   fun getCompanyName(@Header ("x-access-token") header: String,@Body param: PrepaidGetCompanyRequest) : Call<ResponseBody>
@@ -115,13 +126,22 @@ interface ApiInterface
   fun fasTagBillPay(@Header ("x-access-token") header: String,@Body param: FasTagBillPay) : Call<ResponseBody>
 
   @POST("bbps/biller/billPay")
+  fun dthBillPay(@Header ("x-access-token") header: String,@Body param: dthBillPay) : Call<ResponseBody>
+
+  @POST("bbps/biller/billPay")
   fun electricityBillPay(@Header ("x-access-token") header: String,@Body param: ElectricityBillPay) : Call<ResponseBody>
+
+  @POST("bbps/biller/billPay")
+  fun lpgGasBillPay(@Header ("x-access-token") header: String,@Body param: ElectricityBillPay) : Call<ResponseBody>
 
   @POST("bbps/bbpsPrepaid/billPaymentRequest")
   fun rechargePay(@Header ("x-access-token") header: String,@Body param: RechargePay) : Call<ResponseBody>
 
   @POST("bbps/biller/billPayPostPad")
   fun postPaidBillPay(@Header ("x-access-token") header: String,@Body param: PostPaidBillPay) : Call<ResponseBody>
+
+  @POST("bbps/biller/billPayPostPad")
+  fun postPaidBillPayQuick(@Header ("x-access-token") header: String,@Body param: PostPaidQuickBillPay) : Call<ResponseBody>
 
   @POST("wallet/cftoken")
   fun getToken(@Header ("x-access-token") header: String,@Body param: TokenRequest) : Call<ResponseBody>
@@ -158,7 +178,8 @@ interface ApiInterface
 
   companion object {
 
-    var BASE_URL = "http://65.1.86.136:2021/v1/"
+    /*var BASE_URL = "http://65.1.86.136:2021/v1/"*/
+    var BASE_URL = "https://dev-bbps-api.queepay.com/v1/"
 
 
     fun create() : ApiInterface {

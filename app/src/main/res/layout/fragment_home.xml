@@ -52,6 +52,7 @@
 
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/slider"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_margin="@dimen/_5sdp"
             android:layout_height="@dimen/_150sdp"
@@ -464,6 +465,202 @@
                     android:gravity="center"
                     android:padding="@dimen/_5sdp"
                     android:text="FasTag Recharge"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:visibility="gone"
+                >
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_qpay_wallet"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Mobile Recharge"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_send_mobile"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Mobile Recharge"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_view_all"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="View All"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+
+            </LinearLayout>
+
+
+          </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:elevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:id="@+id/layoutDth"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_dth"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="DTH"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:id="@+id/layoutGas"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_camping_gas"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Piped Gas"
+                    android:textColor="@color/colorBlack"
+                    />
+
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="center"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:id="@+id/layoutGasCylinder"
+                  android:orientation="vertical"
+                  >
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_gas"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Book a Cylinder"
                     android:textColor="@color/colorBlack"
                     />
 

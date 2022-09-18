@@ -1,4 +1,4 @@
-package com.qpay.android.rechargePostPaid
+package com.qpay.android.gas
 
 import android.content.Context
 import android.content.Intent
@@ -10,10 +10,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.qpay.android.R
-import com.qpay.android.rechargePostPaid.PostPaidListAdapter.ViewHolder
+import com.qpay.android.gas.GasPipeProviderListAdapter.ViewHolder
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.*
 
-class PostPaidListAdapter(val mContext: Context, private val mList: List<PostPaidBillerListModel>) :
+class GasPipeProviderListAdapter(
+  val mContext: Context,
+  private val mList: List<GasPipeProviderListModel>
+) :
   RecyclerView.Adapter<ViewHolder>() {
 
   // create new views
@@ -34,7 +38,7 @@ class PostPaidListAdapter(val mContext: Context, private val mList: List<PostPai
     holder.name.setText(ItemsViewModel.billerName)
 
     holder.layoutMain.setOnClickListener {
-    val intent = Intent(mContext, PostPaidInputActivity::class.java)
+      val intent = Intent(mContext, GasPipeDetailsActivity::class.java)
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       intent.putExtra("billerId", ItemsViewModel.billerId)
       intent.putExtra("billerName", ItemsViewModel.billerName)
@@ -42,6 +46,7 @@ class PostPaidListAdapter(val mContext: Context, private val mList: List<PostPai
       intent.putExtra("logo", ItemsViewModel.logoUrl)
       intent.putExtra("fetchOption", ItemsViewModel.fetchOption)
       mContext.startActivity(intent)
+
     }
 
     var logo = ItemsViewModel.logoUrl

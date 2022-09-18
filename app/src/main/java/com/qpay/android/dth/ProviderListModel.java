@@ -1,6 +1,6 @@
-package com.qpay.android.rechargePostPaid;
+package com.qpay.android.dth;
 
-public class PostPaidBillerListModel {
+public class ProviderListModel {
     String billerId,billerName, paramName, logoUrl, fetchOption;
 
     public String getFetchOption() {

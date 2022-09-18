@@ -1,6 +1,6 @@
-package com.qpay.android.rechargePostPaid;
+package com.qpay.android.gas_cylinder;
 
-public class PostPaidBillerListModel {
+public class GasCynProviderListModel {
     String billerId,billerName, paramName, logoUrl, fetchOption;
 
     public String getFetchOption() {

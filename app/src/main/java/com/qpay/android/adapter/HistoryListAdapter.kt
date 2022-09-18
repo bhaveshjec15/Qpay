@@ -55,7 +55,7 @@ class HistoryListAdapter(val mContext: Context, private val mList: List<HistoryM
     holder.des.setText(ItemsViewModel.remark)
     holder.date.setText(dateOriginal)
     holder.title.setText(ItemsViewModel.category.replace("_"," "))
-    if(ItemsViewModel.category.equals("Add_Money", true)){
+    if(ItemsViewModel.category.equals("Add_Money", true)|| ItemsViewModel.category.equals("RECEIVE_MONEY", true)){
       holder.amount.setTextColor(mContext.resources.getColor(R.color.colorBtn))
       holder.amount.setText("+ "+mContext.resources.getString(R.string.Rs)+" "+ItemsViewModel.amount)
       holder.icon.setImageDrawable(mContext.getDrawable(R.drawable.ic_money_credit))

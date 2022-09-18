@@ -106,6 +106,7 @@ class PostpaidBillerList : AppCompatActivity() {
             model.billerId = obj.optString("billerId")
             model.billerName = obj.optString("billerName")
             model.logoUrl = obj.optString("billerLogoURL")
+            model.fetchOption = obj.optString("fetchOption")
             var customerParamsArray = obj.optJSONArray("customerParams")
             model.paramName = customerParamsArray.getJSONObject(0).optString("paramName")
             list.add(model)
