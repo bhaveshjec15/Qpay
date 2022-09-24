@@ -68,6 +68,8 @@ class HomeFragment : Fragment() {
             R.layout.fragment_home, container, false)
        // binding.viewmodel = vm//attach your viewModel to xml
         return binding.root
+
+        callApiGetProfile()
     }
 
     companion object {
@@ -77,7 +79,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        callApiGetProfile()
+
         userName.observe(requireActivity(), Observer {
             if (it.isNullOrEmpty()) {
                  binding.tvUserName.text = "Hi... Same"

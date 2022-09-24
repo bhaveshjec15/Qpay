@@ -95,9 +95,12 @@ class HistoryFragment : Fragment() {
             list.add(model)
           }
           if(list.size>0){
-            adapter = HistoryListAdapter(requireActivity(), list)
-            binding.rvHistoryList.adapter = adapter
-            adapter?.notifyDataSetChanged()
+            if(isAdded){
+              adapter = HistoryListAdapter(requireActivity(), list)
+              binding.rvHistoryList.adapter = adapter
+              adapter?.notifyDataSetChanged()
+            }
+
           }
         } else {
           //showSnackBar(pinSetUpActivity, binding.mainLayout, message)
