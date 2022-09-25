@@ -87,6 +87,7 @@
         android:layout_margin="@dimen/_10sdp"
         android:id="@+id/layoutBankItem"
         android:visibility="gone"
+
         app:cardCornerRadius="@dimen/_5sdp"
         android:layout_gravity="center"
         android:layout_height="wrap_content">
@@ -209,7 +210,7 @@
 
   </LinearLayout>
     <Button
-        android:id="@+id/btnDelete"
+        android:id="@+id/btnAddBank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -218,7 +219,7 @@
         android:layout_marginRight="@dimen/_20sdp"
         android:background="@drawable/bg_btn"
         android:foreground="?android:attr/selectableItemBackground"
-        android:text="Delete Bank"
+        android:text="Add Bank"
         android:visibility="gone"
         android:textColor="@color/colorWhite"
         />

@@ -16,6 +16,7 @@ import com.qpay.android.R
 import com.qpay.android.R.drawable
 import com.qpay.android.R.layout
 import com.qpay.android.activity.AddMoneyActivity
+import com.qpay.android.activity.BankAmountTransferActivity
 import com.qpay.android.activity.BankTransferActivity
 import com.qpay.android.activity.MyAccountActivity
 import com.qpay.android.activity.OTPActivity
@@ -170,7 +171,7 @@ class HomeFragment : Fragment() {
             }
             else DesignerToast.Warning(requireContext(),requireActivity().resources.getString(R.string.kyc_pending_msg), Gravity.BOTTOM,Toast.LENGTH_SHORT);
 */
-            val intent = Intent(activity, BankTransferActivity::class.java)
+            val intent = Intent(activity, BankAmountTransferActivity::class.java)
             startActivity(intent)
         }
 

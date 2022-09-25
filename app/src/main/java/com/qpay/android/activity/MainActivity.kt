@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.qpay.android.R
-import com.qpay.android.fragment.BankFragment
+import com.qpay.android.bank.BankFragment
 import com.qpay.android.fragment.HistoryFragment
 import com.qpay.android.fragment.HomeFragment
 import com.qpay.android.fragment.ReqardFragment

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutBankItem1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:visibility="visible"
+    app:cardCornerRadius="@dimen/_5sdp"
+    >
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+        >
+
+      <LinearLayout
+          android:id="@+id/layoutPrimary"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          >
+
+        <TextView
+            android:id="@+id/tvPrimaryStatus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.7"
+            android:gravity="center_vertical"
+            android:text="Primary"
+            android:textColor="@color/colorBtn"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.3"
+            android:src="@drawable/more"
+            />
+
+
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:text="Account Number: "
+            />
+        <TextView
+            android:id="@+id/tvBankName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:text="Bank Name"
+            android:textColor="@color/colorBlack"
+            />
+
+
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:text="IFSC Code: "
+            />
+        <TextView
+            android:id="@+id/tvCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:text="Bank Name"
+            android:textColor="@color/colorBlack"
+            />
+
+
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:text="City: "
+            />
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:text="Bank Name"
+            android:textColor="@color/colorBlack"
+            />
+
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/_30sdp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          android:weightSum="2"
+          >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:text="State: "
+            />
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:text="Bank Name"
+            android:textColor="@color/colorBlack"
+            />
+
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@color/white"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+      <TextView
+          android:id="@+id/tvPrimary"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="end"
+          android:gravity="center_vertical"
+          android:padding="@dimen/_5sdp"
+          android:text="Set Primary"
+          android:textColor="@color/colorBlack"
+          />
+
+      <TextView
+          android:id="@+id/tvDelete"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="end"
+          android:gravity="center_vertical"
+          android:padding="@dimen/_5sdp"
+          android:text="Delete"
+          android:textColor="@color/colorBlack"
+          />
+
+
+    </LinearLayout>
+
+
+  </RelativeLayout>
+</androidx.cardview.widget.CardView>

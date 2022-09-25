@@ -36,7 +36,9 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Part
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiInterface
@@ -92,8 +94,11 @@ interface ApiInterface
   @POST("customer/requestTransfer")
   fun amountTransfer(@Header ("x-access-token") header: String,@Body param: BankAmountTransferRequest) : Call<ResponseBody>
 
-  @DELETE("customer/bankAccount")
-  fun deleteBank(@Header ("x-access-token") header: String) : Call<ResponseBody>
+  @DELETE("customer/bankAccount/{id}")
+  fun deleteBank(@Header ("x-access-token") header: String, @Path("id") id: String) : Call<ResponseBody>
+
+  @PUT("customer/bankAccount/{id}")
+  fun setPrimaryBank(@Header ("x-access-token") header: String, @Path("id") id: String) : Call<ResponseBody>
 
   @POST("bbps/biller/getBillerAllDetailsByCategoryName")
   fun getFasTagList(@Header ("x-access-token") header: String,@Body param: FasTagBillerRequest) : Call<ResponseBody>

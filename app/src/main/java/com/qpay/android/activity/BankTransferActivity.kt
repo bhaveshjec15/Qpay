@@ -58,7 +58,7 @@ class BankTransferActivity : AppCompatActivity() {
 
     }
 
-    binding.btnDelete.setOnClickListener { deleteBank() }
+   // binding.btnDelete.setOnClickListener { deleteBank() }
 
   }
 
@@ -86,7 +86,8 @@ class BankTransferActivity : AppCompatActivity() {
         if (statusCode == 200) {
           binding.layoutAddBank.visibility = View.GONE
           binding.layoutBankItem.visibility = View.VISIBLE
-          binding.btnDelete.visibility = View.VISIBLE
+          binding.btnAddBank.visibility = View.VISIBLE
+         // binding.btnDelete.visibility = View.VISIBLE
           var dataObject = jsonObject.optJSONObject("data")
 
           binding.tvBankName.text = dataObject.optString("bankAccount")
@@ -108,7 +109,8 @@ class BankTransferActivity : AppCompatActivity() {
         else {
           binding.layoutAddBank.visibility = View.VISIBLE
           binding.layoutBankItem.visibility = View.GONE
-          binding.btnDelete.visibility = View.GONE
+          binding.btnAddBank.visibility = View.GONE
+         // binding.btnDelete.visibility = View.GONE
          // showSnackBar(bankTransferActivity, binding.mainLayout, message)
         }
       }
@@ -142,7 +144,7 @@ class BankTransferActivity : AppCompatActivity() {
     binding.progress.visibility = View.VISIBLE
     val apiInterface = ApiInterface.create().deleteBank(
       getStringShrd(baseContext,
-        CommonUtils.accessToken))
+        CommonUtils.accessToken),"")
 
     //apiInterface.enqueue( Callback<List<Movie>>())
     apiInterface.enqueue(object : Callback<ResponseBody> {
